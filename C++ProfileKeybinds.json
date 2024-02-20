@@ -1,0 +1,121 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+r",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.editor.changeLanguageMode",
+        "when": "!notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode",
+        "when": "!notebookEditorFocused"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "make\n"
+        },
+        "when": "editorFocus || terminalFocus",
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    },
+    {
+        "key": "ctrl+j ctrl+l",
+        "command": "extension.jumpy-line"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.toggleColumnSelection"
+    },
+    {
+        "key": "ctrl+alt+oem_comma",
+        "command": "extension.toggleSemicolon"
+    },
+    {
+        "key": "ctrl+j ctrl+k",
+        "command": "jump-extension.jump-to-the-end-of-a-word",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+q alt+w",
+        "command": "-jump-extension.jump-to-the-end-of-a-word",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j ctrl+j",
+        "command": "jump-extension.jump-to-the-start-of-a-word",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+q alt+q",
+        "command": "-jump-extension.jump-to-the-start-of-a-word",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_comma",
+        "command": "workbench.action.openSettingsJson"
+    },
+    {
+        "key": "shift+tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "tab",
+        "command": "-editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "shift+enter",
+        "command": "code-runner.run",
+        "when": "!notebookEditorFocused && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.moveSelectionToPreviousFindMatch"
+    },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.previousMatchFindAction",
+        "when": "editorFocus && findInputFocussed"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus && findInputFocussed"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "workbench.profiles.actions.switchProfile"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "explorer.newFile"
+    }
+]

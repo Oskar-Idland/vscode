@@ -1,0 +1,2240 @@
+{
+    "workbench.colorTheme": "monokai-best",
+    "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
+    "editor.fontLigatures": true,
+
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatexDirs",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-aux-directory=auxdir",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+
+
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%/out",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        // {
+        //     "name": "lualatexmk",
+        //     "command": "latexmk",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "-file-line-error",
+        //         "-lualatex",
+        //         "-outdir=%OUTDIR%",
+        //         "%DOC%"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "xelatexmk",
+        //     "command": "latexmk",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "-file-line-error",
+        //         "-xelatex",
+        //         "-outdir=%OUTDIR%",
+        //         "%DOC%"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "latexmk_rconly",
+        //     "command": "latexmk",
+        //     "args": [
+        //         "%DOC%"
+        //     ],
+        //     "env": {}
+        // },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {"TEXMFHOME": "/usr/bin/pdflatex"}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "rnw2tex",
+            "command": "Rscript",
+            "args": [
+                "-e",
+                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2tex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "jnw2texmintex",
+            "command": "julia",
+            "args": [
+                "-e",
+                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+            ],
+            "env": {}
+        },
+        {
+            "name": "tectonic",
+            "command": "tectonic",
+            "args": [
+                "--synctex",
+                "--keep-logs",
+                "%DOC%.tex"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.view.pdf.color.light.backgroundColor": "#252525",
+    "latex-workshop.view.pdf.color.light.pageColorsBackground": "#252525",
+    "latex-workshop.view.pdf.color.dark.pageColorsBackground": "#efefef",
+    "latex-workshop.view.pdf.color.dark.pageColorsForeground": "#000000",
+    "latex-workshop.view.pdf.color.light.pageColorsForeground": "\"#2596be\"",
+    "latex-workshop.linting.run": "onType",
+    
+    "latex-workshop.intellisense.citation.type": "browser",
+    "editor.inlineSuggest.enabled": true,
+    "latex-workshop.view.pdf.color.dark.pageBorderColor": "\"#2596be\"",
+    "latex-workshop.view.pdf.color.light.pageBorderColor": "\"#2596be\"",
+    "latex-workshop.view.pdf.invertMode.grayscale": 0,
+    "todohighlight.isEnable": true,
+    "pdf-preview.default.scrollMode": "wrapped",
+    "latex-workshop.view.pdf.scrollMode": 2,
+    "conceal.substitutions": [
+        {
+            // "language": "python",
+            // "substitutions": [
+            //     {
+            //         "ugly": "**2",
+            //         "pretty": "²",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**3",
+            //         "pretty": "³",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**4",
+            //         "pretty": "⁴",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**5",
+            //         "pretty": "⁵",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**6",
+            //         "pretty": "⁶",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**7",
+            //         "pretty": "⁷",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**8",
+            //         "pretty": "⁸",
+            //         "post": "\\b|_"
+            //     },
+            //     {
+            //         "ugly": "**9",
+            //         "pretty": "⁹",
+            //         "post": "\\b|_"
+            //     },
+            // ],
+            
+            "language": "latex",
+            "substitutions": [
+                // Bras and Kets
+                    { 
+                    "ugly": "(?:\\\\ket{)",     
+                    "pretty": "|", 
+                    "style": {"color": "#2DCDDF"}
+                    },
+                    { 
+                    "ugly": "(?<=\\\\ket{[^}]+)}", 
+                    "pretty": "⟩", 
+                    "style": {"color": "#2DCDDF"}
+                    },
+                    { 
+                    "ugly": "(?:\\\\bra{)",     
+                    "pretty": "⟨", 
+                    "style": {"color": "#2DCDDF"}
+                    },
+                    { 
+                    "ugly": "(?<=\\\\bra{[^}]+)}", 
+                    "pretty": "|", 
+                    "style": {"color": "#2DCDDF"}
+                    },
+                    // {
+                    //     "ugly": "(?:\\\\vec{)",
+                    //     "pretty": "",
+                    // },
+                    // {
+                    //     "ugly": "(?<=\\\\vec{[^}]+)}",
+                    //     "pretty": "̂",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    
+                    // {
+                    // "ugly": "\\\\ket\\{0\\}",
+                    // "pretty": "|0⟩",
+                    // "style": {
+                    //     "color": "#2DCDDF"}
+                    // },
+                    // {
+                    // "ugly": "\\\\ket\\{1\\}",
+                    // "pretty": "|1⟩",
+                    // "style": {
+                    //     "color": "#2DCDDF"}
+                    // },
+                    // {
+                    // "ugly": "\\\\ket\\{↑}",
+                    // "pretty": "|↑⟩",
+                    // "style": {
+                    //     "color": "#2DCDDF"}
+                    // },
+                    // {
+                    // "ugly": "\\\\ket\\{↓}",
+                    // "pretty": "|↓⟩",
+                    // "style": {
+                    //     "color": "#2DCDDF"}
+                    // },
+                    // {
+                    // "ugly": "\\\\ket\\{a\\}",
+                    // "pretty": "|a⟩",
+                    // "style": {
+                    //     "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{b\\}",
+                    //     "pretty": "|b⟩",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{c\\}",
+                    //     "pretty": "|c⟩",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{d\\}",
+                    //     "pretty": "|d⟩",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{n\\}",
+                    //     "pretty": "|n⟩",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{m\\}",
+                    //     "pretty": "|m⟩",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{u\\}",
+                    //     "pretty": "|u⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },            
+                    // {
+                    //     "ugly": "\\\\ket\\{v\\}",
+                    //     "pretty": "|v⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{w\\}",
+                    //     "pretty": "|w⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{ψ\\}",
+                    //     "pretty": "|ψ⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{ψ\\}",
+                    //     "pretty": "|Ψ⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{λ\\}",
+                    //     "pretty": "|λ⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\ket\\{ϕ\\}",
+                    //     "pretty": "|ϕ⟩",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+                    // },
+
+
+                    // {
+                    //     "ugly": "\\\\bra\\{0\\}",
+                    //     "pretty": "⟨0|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{1\\}",
+                    //     "pretty": "⟨1|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{↑\\}",
+                    //     "pretty": "⟨↑|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{↓\\}",
+                    //     "pretty": "⟨↓|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{a\\}",
+                    //     "pretty": "⟨a|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{b\\}",
+                    //     "pretty": "⟨b|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    //  },
+                    // {
+                    //     "ugly": "\\\\bra\\{c\\}",
+                    //     "pretty": "⟨c|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{d\\}",
+                    //     "pretty": "⟨d|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{n\\}",
+                    //     "pretty": "⟨n|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{m\\}",
+                    //     "pretty": "⟨m|",
+                    //     "style": {
+                    //         "color": "#2DCDDF"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{u\\}",
+                    //     "pretty": "⟨u|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },            
+                    // {
+                    //     "ugly": "\\\\bra\\{v\\}",
+                    //     "pretty": "⟨v|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{w\\}",
+                    //     "pretty": "⟨w|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{ψ\\}",
+                    //     "pretty": "⟨ψ|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{Ψ\\}",
+                    //     "pretty": "⟨Ψ|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+
+                    // },
+                    // {
+                    //     "ugly": "\\\\bra\\{λ\\}",
+                    //     "pretty": "⟨λ|",
+                    //     "style": {
+                    //         "color": "#2DCD"}
+                    // },
+
+
+                    
+
+
+                // Parentheses 
+
+                    {
+                        "ugly": "\\\\left\\(", 
+                        "pretty": "(",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\right\\)",
+                        "pretty": ")",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\left\\[", 
+                        "pretty": "[",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\right\\]",
+                        "pretty": "]",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\left\\\\{", 
+                        "pretty": "{",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\right\\\\}",
+                        "pretty": "}",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\left\\|", 
+                        "pretty": "|",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\right\\|",
+                        "pretty": "|",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\left\\.",
+                        "pretty": "."
+                    },
+                    {
+                        "ugly": "\\\\right\\\\rvert",
+                        "pretty": "|",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\left\\<", 
+                        "pretty": "⟨",
+                        "style": {
+                            "color": "#e91e63"},
+                    },
+                    {
+                        "ugly": "\\\\right\\>",
+                        "pretty": "⟩",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    {
+                        "ugly": "\\\\Big\\(",
+                        "pretty": "(",
+                        "style": {
+                            "color": "#e91e63"}  
+                    },
+                    {
+                        "ugly": "\\\\Big\\)",
+                        "pretty": ")",
+                        "style": {
+                            "color": "#e91e63"}
+                    },
+                    // {
+                    //     "ugly": "\\\\Bigg\\(",
+                    //     "pretty": "(",
+                    //     "style": {
+                    //         "color": "#cc00ef"}
+                    // },
+                    // {
+                    //     "ugly": "\\\\Bigg\\)",
+                    //     "pretty": ")",
+                    //     "style": {
+                    //         "color": "#cc00ef"}
+                    // },
+                    {
+                        "ugly": "\\\\sqrt",
+                        "pretty": "√",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\\\\\\\",
+                        "pretty": "↩",
+                        "style": {
+                            "color": "#e91e63"
+                        }
+                    },
+                    
+
+                // Bras and Kets
+                // {
+                //     "ugly": "\\\\bra{^([a-z])}",
+                //     "pretty": "test"
+                // }
+
+                
+                // Super and Subscripts 0-9
+                    {
+                        "ugly": "\\^\\{\\*\\}",
+                            "pretty": "*",
+                            "style": {
+                                "color": "#ff0074"}
+                    },
+                    {
+                        "ugly": "\\^\\{†\\}",
+                        "pretty": "†",
+                        "style": {
+                            "color": "#ff0074"}
+                    },
+                    {
+                        "ugly": "\\^1",
+                        "pretty": "¹",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{1\\}",
+                        "pretty": "¹",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^2",
+                        "pretty": "²",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{2\\}",
+                        "pretty": "²",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^3",
+                        "pretty": "³",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{3\\}",
+                        "pretty": "³",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^4",
+                        "pretty": "⁴",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{4\\}",
+                        "pretty": "⁴",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^5",
+                        "pretty": "⁵",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{5\\}",
+                        "pretty": "⁵",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^6",
+                        "pretty": "⁶",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{6\\}",
+                        "pretty": "⁶",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^7",
+                        "pretty": "⁷",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{7\\}",
+                        "pretty": "⁷",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^8",
+                        "pretty": "⁸",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{8\\}",
+                        "pretty": "⁸",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^9",
+                        "pretty": "⁹",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{9\\}",
+                        "pretty": "⁹",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+
+
+                    {
+                        "ugly": "\\_0",
+                        "pretty": "₀",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\_\\{0\\}",
+                        "pretty": "₀",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_1", 
+                        "pretty": "₁",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{1\\}", 
+                        "pretty": "₁",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{2\\}",
+                        "pretty": "₂",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_2",
+                        "pretty": "₂",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{3\\}",
+                        "pretty": "₃",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_3",
+                        "pretty": "₃",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_4", 
+                        "pretty": "₄",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{4\\}", 
+                        "pretty": "₄",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_5", 
+                        "pretty": "₅",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{5\\}", 
+                        "pretty": "₅",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_5", 
+                        "pretty": "₅",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{5\\}", 
+                        "pretty": "₅",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_6", 
+                        "pretty": "₆",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{6\\}", 
+                        "pretty": "₆",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_7", 
+                        "pretty": "₇",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{7\\}", 
+                        "pretty": "₇",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_8", 
+                        "pretty": "₈",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{8\\}", 
+                        "pretty": "₈",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_9", 
+                        "pretty": "₉",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{10\\}",
+                        "pretty": "₁₀",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{\\perp}\\}",
+                        "pretty": "⊥",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    // {
+                    //     "ugly": "_{-∞}",
+                    //     "pretty": "∞"
+                    // },
+                    // {
+                    //     "ugly": "^{∞}",
+                    //     "pretty": "∞"
+                    // },
+
+                // Superscript letters
+                    {
+                        "ugly": "\\^a",
+                        "pretty": "ᵃ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{a\\}",
+                        "pretty": "ᵃ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^b",
+                        "pretty": "ᵇ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+
+                    {
+                        "ugly": "\\^\\{b\\}",
+                        "pretty": "ᵇ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^c",
+                        "pretty": "ᶜ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{c\\}",
+                        "pretty": "ᶜ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^d",
+                        "pretty": "ᵈ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{d\\}",
+                        "pretty": "ᵈ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^e",
+                        "pretty": "ᵉ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{e\\}",
+                        "pretty": "ᵉ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^f",
+                        "pretty": "ᶠ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{f\\}",
+                        "pretty": "ᶠ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^g",
+                        "pretty": "ᵍ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{g\\}",
+                        "pretty": "ᵍ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^h",
+                        "pretty": "ʰ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{h\\}",
+                        "pretty": "ʰ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^i",
+                        "pretty": "ⁱ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{i\\}",
+                        "pretty": "ⁱ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^j",
+                        "pretty": "ʲ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{j\\}",
+                        "pretty": "ʲ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^k",
+                        "pretty": "ᵏ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{k\\}",
+                        "pretty": "ᵏ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^l",
+                        "pretty": "ˡ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{l\\}",
+                        "pretty": "ˡ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^m",
+                        "pretty": "ᵐ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{m\\}",
+                        "pretty": "ᵐ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^n",
+                        "pretty": "ⁿ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{n\\}",
+                        "pretty": "ⁿ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^o",
+                        "pretty": "ᵒ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{o\\}",
+                        "pretty": "ᵒ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^p",
+                        "pretty": "ᵖ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{p\\}",
+                        "pretty": "ᵖ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^r",
+                        "pretty": "ʳ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{r\\}",
+                        "pretty": "ʳ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^s",
+                        "pretty": "ˢ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{s\\}",
+                        "pretty": "ˢ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^t",
+                        "pretty": "ᵗ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{t\\}",
+                        "pretty": "ᵗ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^u",
+                        "pretty": "ᵘ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{u\\}",
+                        "pretty": "ᵘ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^v",
+                        "pretty": "ᵛ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{v\\}",
+                        "pretty": "ᵛ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^w",
+                        "pretty": "ʷ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{w\\}",
+                        "pretty": "ʷ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^x",
+                        "pretty": "ˣ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{x\\}",
+                        "pretty": "ˣ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^y",
+                        "pretty": "ʸ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{y\\}",
+                        "pretty": "ʸ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^z",
+                        "pretty": "ᶻ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "\\^\\{z\\}",
+                        "pretty": "ᶻ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+    
+
+                    
+
+                // Subscripts letters 
+
+                    {
+                        "ugly": "_a",
+                        "pretty": "ₐ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{a\\}",
+                        "pretty": "ₐ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },                    
+                    {
+                        "ugly": "_e",
+                        "pretty": "ₑ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{e\\}",
+                        "pretty": "ₑ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_h",
+                        "pretty": "ₕ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{h\\}",
+                        "pretty": "ₕ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_i",
+                        "pretty": "ᵢ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{i\\}",
+                        "pretty": "ᵢ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_j",
+                        "pretty": "ⱼ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{j\\}",
+                        "pretty": "ⱼ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_k",
+                        "pretty": "ₖ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{k\\}",
+                        "pretty": "ₖ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    
+                    {
+                        "ugly": "\\\\mathrm{d}",
+                        "pretty": "d",
+                        "style": {
+                            "color": "#ff0074"}
+                    },
+
+                    {
+                        "ugly": "_l",
+                        "pretty": "ₗ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{l\\}",
+                        "pretty": "ₗ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_m",
+                        "pretty": "ₘ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{m\\}",
+                        "pretty": "ₘ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_n",
+                        "pretty": "ₙ",
+                        "post": "\\b|_",
+                        "style": {
+                            "color": "#2DCDDF"}  
+                    },
+                    {
+                        "ugly": "_\\{n\\}",
+                        "pretty": "ₙ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_o",
+                        "pretty": "ₒ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{o\\}",
+                        "pretty": "ₒ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_p",
+                        "pretty": "ₚ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{p\\}",
+                        "pretty": "ₚ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_r",
+                        "pretty": "ᵣ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{r\\}",
+                        "pretty": "ᵣ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_s",
+                        "pretty": "ₛ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{s\\}",
+                        "pretty": "ₛ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_t",
+                        "pretty": "ₜ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{t\\}",
+                        "pretty": "ₜ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_u",
+                        "pretty": "ᵤ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{u\\}",
+                        "pretty": "ᵤ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_v",
+                        "pretty": "ᵥ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{v\\}",
+                        "pretty": "ᵥ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_w",
+                        "pretty": "w",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{w\\}",
+                        "pretty": "w",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    
+                    {
+                        "ugly": "_x",
+                        "pretty": "ₓ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },
+                    {
+                        "ugly": "_\\{x\\}",
+                        "pretty": "ₓ",
+                        "style": {
+                            "color": "#2DCDDF"}
+                    },    
+                           
+                    
+                {
+                    "ugly": "\\^∘",
+                    "pretty": "°",
+                    "style": {
+                        "color": "#2DCDDF"}
+                },
+                {
+                    "ugly": "\\$",
+                    "pretty": "\null"
+                },
+                {
+                    "ugly": "\\\\\\[",
+                    "pretty": "🞃"
+                },
+                {
+                    "ugly": "\\\\]",
+                    "pretty": "🞁"
+                },
+                {
+                    "ugly": "\\\\leq",
+                    "pretty": "≤",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\geq",
+                    "pretty": "≥",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\cdots",
+                    "pretty": "⋯",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\vdots",
+                    "pretty": "⋮",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\ldots",
+                    "pretty": "…",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\ldots",
+                    "pretty": "…",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\top",
+                    "pretty": "⊤",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\b|_ot",
+                    "pretty": "⊥",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\topbot",
+                    "pretty": "⌶",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\wedge",
+                    "pretty": "∧",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\vee",
+                    "pretty": "∨",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\cup",
+                    "pretty": "∪",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\cap",
+                    "pretty": "∩",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\otimes",
+                    "pretty": "⊗",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\neg",
+                    "pretty": "¬",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\ ",
+                    "pretty": "␣",
+                    "style": {
+                        "color": "#2DCDDF"}
+                },
+                {
+                    "ugly": "\\\\forall",
+                    "pretty": "∀",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\exists",
+                    "pretty": "∃",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\nexists",
+                    "pretty": "∄",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\b|_ecause",
+                    "pretty": "∵",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\therefore",
+                    "pretty": "∴",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\neq",
+                    "pretty": "≠",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\equiv",
+                    "pretty": "≡",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\mapsto",
+                    "pretty": "↦",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\mapsfrom",
+                    "pretty": "↤",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Mapsto",
+                    "pretty": "⤇",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Mapsfrom",
+                    "pretty": "⤆",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\longmapsto",
+                    "pretty": "⟼",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\mapsfrom",
+                    "pretty": "⟻",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Longmapsto",
+                    "pretty": "⟾",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Longmapsfrom",
+                    "pretty": "⟽",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\leftarrow",
+                    "pretty": "←",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\rightarrow",
+                    "pretty": "→",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\to",
+                    "pretty": "→",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\leftrightarrow",
+                    "pretty": "↔",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Leftarrow",
+                    "pretty": "⇐",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Rightarrow",
+                    "pretty": "⇒",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Leftrightarrow",
+                    "pretty": "⇔",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\longleftarrow",
+                    "pretty": "⟵",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\longrightarrow",
+                    "pretty": "⟶",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\longleftrightarrow",
+                    "pretty": "⟷",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Longrightarrow",
+                    "pretty": "⟹",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\implies",
+                    "pretty": "⟹",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Longleftarrow",
+                    "pretty": "⟸",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\impliedby",
+                    "pretty": "⟸",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Longleftrightarrow",
+                    "pretty": "⟺",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\iff",
+                    "pretty": "⟺",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\in",
+                    "pretty": "∈",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\notin",
+                    "pretty": "∉",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\pm",
+                    "pretty": "±",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\times",
+                    "pretty": "×",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\infty",
+                    "pretty": "∞",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\sum",
+                    "pretty": "∑",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\prod",
+                    "pretty": "∏",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\int",
+                    "pretty": "∫",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\iint",
+                    "pretty": "∬",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\iiint",
+                    "pretty": "∭",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\oint",
+                    "pretty": "∮",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\oiint",
+                    "pretty": "∯",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\oiiint",
+                    "pretty": "∰",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Gamma",
+                    "pretty": "Γ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Delta",
+                    "pretty": "Δ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Theta",
+                    "pretty": "Θ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Lambda",
+                    "pretty": "Λ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Xi",
+                    "pretty": "Ξ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Pi",
+                    "pretty": "Π",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Sigma",
+                    "pretty": "Σ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Upsilon",
+                    "pretty": "Υ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Phi",
+                    "pretty": "Φ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Psi",
+                    "pretty": "Ψ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\Omega",
+                    "pretty": "Ω",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\alpha",
+                    "pretty": "α",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\b|_eta",
+                    "pretty": "β",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\gamma",
+                    "pretty": "γ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\delta",
+                    "pretty": "δ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\epsilon",
+                    "pretty": "ε",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\zeta",
+                    "pretty": "ζ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\eta",
+                    "pretty": "η",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\theta",
+                    "pretty": "θ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\iota",
+                    "pretty": "ι",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\kappa",
+                    "pretty": "κ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\lambda",
+                    "pretty": "λ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\mu",
+                    "pretty": "μ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\nu",
+                    "pretty": "ν",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\xi",
+                    "pretty": "ξ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\pi",
+                    "pretty": "π",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\rho",
+                    "pretty": "ρ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\varsigma",
+                    "pretty": "ς",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\sigma",
+                    "pretty": "σ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\tau",
+                    "pretty": "τ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\upsilon",
+                    "pretty": "υ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\phi",
+                    "pretty": "φ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\chi",
+                    "pretty": "χ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\psi",
+                    "pretty": "ψ",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\omega",
+                    "pretty": "ω",
+                    "post": "\\b|_"
+                },
+                {
+                    "ugly": "\\\\mathbb{A}",
+                    "pretty": "𝔸"
+                },
+                {
+                    "ugly": "\\\\mathbb{B}",
+                    "pretty": "𝔹"
+                },
+                {
+                    "ugly": "\\\\mathbb{C}",
+                    "pretty": "ℂ"
+                },
+                {
+                    "ugly": "\\\\mathbb{D}",
+                    "pretty": "𝔻"
+                },
+                {
+                    "ugly": "\\\\mathbb{E}",
+                    "pretty": "𝔼"
+                },
+                {
+                    "ugly": "\\\\mathbb{F}",
+                    "pretty": "𝔽"
+                },
+                {
+                    "ugly": "\\\\mathbb{G}",
+                    "pretty": "𝔾"
+                },
+                {
+                    "ugly": "\\\\mathbb{H}",
+                    "pretty": "ℍ"
+                },
+                {
+                    "ugly": "\\\\mathbb{I}",
+                    "pretty": "𝕀"
+                },
+                {
+                    "ugly": "\\\\mathbb{J}",
+                    "pretty": "𝕁"
+                },
+                {
+                    "ugly": "\\\\mathbb{K}",
+                    "pretty": "𝕂"
+                },
+                {
+                    "ugly": "\\\\mathbb{L}",
+                    "pretty": "𝕃"
+                },
+                {
+                    "ugly": "\\\\mathbb{M}",
+                    "pretty": "𝕄"
+                },
+                {
+                    "ugly": "\\\\mathbb{N}",
+                    "pretty": "ℕ"
+                },
+                {
+                    "ugly": "\\\\mathbb{O}",
+                    "pretty": "𝕆"
+                },
+                {
+                    "ugly": "\\\\mathbb{P}",
+                    "pretty": "ℙ"
+                },
+                {
+                    "ugly": "\\\\mathbb{Q}",
+                    "pretty": "ℚ"
+                },
+                {
+                    "ugly": "\\\\mathbb{R}",
+                    "pretty": "ℝ"
+                },
+                {
+                    "ugly": "\\\\mathbb{S}",
+                    "pretty": "𝕊"
+                },
+                {
+                    "ugly": "\\\\mathbb{T}",
+                    "pretty": "𝕋"
+                },
+                {
+                    "ugly": "\\\\mathbb{U}",
+                    "pretty": "𝕌"
+                },
+                {
+                    "ugly": "\\\\mathbb{V}",
+                    "pretty": "𝕍"
+                },
+                {
+                    "ugly": "\\\\mathbb{W}",
+                    "pretty": "𝕎"
+                },
+                {
+                    "ugly": "\\\\mathbb{X}",
+                    "pretty": "𝕏"
+                },
+                {
+                    "ugly": "\\\\mathbb{Y}",
+                    "pretty": "𝕐"
+                },
+                {
+                    "ugly": "\\\\mathbb{Z}",
+                    "pretty": "ℤ"
+                },
+                {
+                    "ugly": "\\\\mathbb{a}",
+                    "pretty": "𝕒"
+                },
+                {
+                    "ugly": "\\\\mathbb{b}",
+                    "pretty": "𝕓"
+                },
+                {
+                    "ugly": "\\\\mathbb{c}",
+                    "pretty": "𝕔"
+                },
+                {
+                    "ugly": "\\\\mathbb{d}",
+                    "pretty": "𝕕"
+                },
+                {
+                    "ugly": "\\\\mathbb{e}",
+                    "pretty": "𝕖"
+                },
+                {
+                    "ugly": "\\\\mathbb{f}",
+                    "pretty": "𝕗"
+                },
+                {
+                    "ugly": "\\\\mathbb{g}",
+                    "pretty": "𝕘"
+                },
+                {
+                    "ugly": "\\\\mathbb{h}",
+                    "pretty": "𝕙"
+                },
+                {
+                    "ugly": "\\\\mathbb{i}",
+                    "pretty": "𝕚"
+                },
+                {
+                    "ugly": "\\\\mathbb{j}",
+                    "pretty": "𝕛"
+                },
+                {
+                    "ugly": "\\\\mathbb{k}",
+                    "pretty": "𝕜"
+                },
+                {
+                    "ugly": "\\\\mathbb{l}",
+                    "pretty": "𝕝"
+                },
+                {
+                    "ugly": "\\\\mathbb{m}",
+                    "pretty": "𝕞"
+                },
+                {
+                    "ugly": "\\\\mathbb{n}",
+                    "pretty": "𝕟"
+                },
+                {
+                    "ugly": "\\\\mathbb{o}",
+                    "pretty": "𝕠"
+                },
+                {
+                    "ugly": "\\\\mathbb{p}",
+                    "pretty": "𝕡"
+                },
+                {
+                    "ugly": "\\\\mathbb{q}",
+                    "pretty": "𝕢"
+                },
+                {
+                    "ugly": "\\\\mathbb{r}",
+                    "pretty": "𝕣"
+                },
+                {
+                    "ugly": "\\\\mathbb{s}",
+                    "pretty": "𝕤"
+                },
+                {
+                    "ugly": "\\\\mathbb{t}",
+                    "pretty": "𝕥"
+                },
+                {
+                    "ugly": "\\\\mathbb{u}",
+                    "pretty": "𝕦"
+                },
+                {
+                    "ugly": "\\\\mathbb{v}",
+                    "pretty": "𝕧"
+                },
+                {
+                    "ugly": "\\\\mathbb{w}",
+                    "pretty": "𝕨"
+                },
+                {
+                    "ugly": "\\\\mathbb{x}",
+                    "pretty": "𝕩"
+                },
+                {
+                    "ugly": "\\\\mathbb{y}",
+                    "pretty": "𝕪"
+                },
+                {
+                    "ugly": "\\\\mathbb{z}",
+                    "pretty": "𝕫"
+                },
+            ]
+        }
+    ],
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "github.copilot.advanced": {
+    
+    },
+    "cSpell.userWords": [
+        "Clebsch",
+        "eigenfunctions",
+        "eigenket",
+        "eigenkets",
+        "eigenstate",
+        "eigenstates",
+        "Equipartition",
+        "Gordan",
+        "groundstate",
+        "holonomic",
+        "Kets",
+        "Macrostate",
+        "matplotlib",
+        "Oblig",
+        "orthonormality",
+        "pyplot",
+        "savefig",
+        "translationally",
+        "wavefunction",
+        "wavefunctions"
+    ],
+    "files.autoSave": "afterDelay",
+    "git.openRepositoryInParentFolders": "always",
+    "editor.bracketPairColorization.enabled": true,
+    "latex-workshop.view.pdf.invert": 0.89,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "diffEditor.wordWrap": "on",
+    "editor.wordWrap": "bounded",
+    "editor.fontWeight": 500,
+    "resmongraphical.mem.style": "Dots",
+    "resmongraphical.battery.style": "Dots",
+    "umath.preview.customCSS": [
+        "maxHeight: 15%",
+        "overflow-x: auto",
+        "pointer-events: auto",
+    ],
+    "background.fullscreen": {
+        "image": "file:///C:/Users/Oskar/Downloads/387561699_1008172387176465_8630770892956186342_n.jpg",
+        "images": [],
+        "opacity": 0.9,
+        "size": "cover",
+        "position": "center",
+        "interval": 0
+    },
+    "background.enabled": false,
+    "latex-workshop.view.pdf.trim": 3,
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "editor.minimap.enabled": false,
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatexDirs",
+            "tools": [
+                "pdflatexDirs"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "latexmk (xelatex)",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Compile Rnw files",
+            "tools": [
+                "rnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Jnw files",
+            "tools": [
+                "jnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "Compile Pnw files",
+            "tools": [
+                "pnw2tex",
+                "latexmk"
+            ]
+        },
+        {
+            "name": "tectonic",
+            "tools": [
+                "tectonic"
+            ]
+        }
+    ],
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "latex-workshop.latex.watch.pdf.delay": 500,
+    "workbench.editor.editorActionsLocation": "hidden",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.editor.wrapTabs": true,
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.view.outline.sync.viewer": true,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDragAndDrop": false,
+    "latex-workshop.latex.clean.fileTypes": [
+        "%DOCFILE%.bbl",
+        "%DOCFILE%.blg",
+        "%DOCFILE%.idx",
+        "%DOCFILE%.ind",
+        "%DOCFILE%.lof",
+        "%DOCFILE%.lot",
+        "%DOCFILE%.acn",
+        "%DOCFILE%.acr",
+        "%DOCFILE%.alg",
+        "%DOCFILE%.glg",
+        "%DOCFILE%.glo",
+        "%DOCFILE%.gls",
+        "%DOCFILE%.fls",
+        "%DOCFILE%.log",
+        "%DOCFILE%.fdb_latexmk",
+        "%DOCFILE%.snm",
+        "%DOCFILE%.synctex(busy)",
+        "%DOCFILE%.synctex.gz(busy)",
+        "%DOCFILE%.nav",
+        "%DOCFILE%.vrb",
+        "%DOCFILE%.out"
+    ],
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.view.pdf.color.dark.backgroundColor": "#eeeeee",
+    "editor.stickyScroll.enabled": true,
+    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: $3}\n\\end{figure}\n$0",
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+}
