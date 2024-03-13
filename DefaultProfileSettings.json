@@ -1941,5 +1941,5 @@
     "workbench.list.smoothScrolling": true,
     "python.defaultInterpreterPath": "/home/oskar/anaconda3/envs/myenv/bin/python",
     "terminal.integrated.inheritEnv": false,
-    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: $3}\n\\end{figure}\n$0"
+    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0"
 }

@@ -280,33 +280,33 @@ snippet `(})(\d)\2` "auto subscript" iAm
 `` rv = m[1] + "_" + m[2]``
 endsnippet
 
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])(\d)` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])(\d)` "auto subscript" iAm
 `` rv = m[1] + "_" + m[2]``
 endsnippet
 
 priority 100
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])_(\d{2})` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])_(\d{2})` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "}$0" ``
 endsnippet
 
 priority 100
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])S(\d)` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])S(\d)` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "$1}$2"``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ}])([a-z])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1) ``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ}])S([a-z])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])S([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_{" + m[2].substring(0, 1) + "$1}$2"``
 endsnippet
 
-snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ}])([a-z])\2` "auto subscript 2" iAm
+snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1)``
 endsnippet
 
-snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ])_(\d{2})` "auto subscript" iAm
+snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂])_(\d{2})` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "}$0" ``
 endsnippet
 
@@ -357,11 +357,11 @@ snippet tit "text it" A
 \textit{${1:${VISUAL}}}$0
 endsnippet
 
-snippet dlin "doubble underline" iA 
+snippet dlin "doubble underline" iAm 
 \underline{\underline{${1:${VISUAL}}}}$0
 endsnippet
 
-snippet lin "underline" iA
+snippet lin "underline" iAm
 \underline{${1:${VISUAL}}}$0
 endsnippet
 
@@ -575,7 +575,7 @@ snippet hcos "cosh" iAm
 \cosh
 endsnippet
 
-snippet `(?<!\\)(sin|cos|arccot|cot|csc|ln|exp|det|perp|arcsin|arccos|arctan|arccot|arccsc|arcsec|ell|nabla|notin|not)` "function" iAm
+snippet `(?<!\\)(sin|cos|arccot|cot|csc|ln|exp|det|perp|arcsin|arccos|arctan|tan|arccot|arccsc|arcsec|ell|nabla|notin|not)` "function" iAm
 \\``rv = m[1]`` 
 endsnippet
 
@@ -877,6 +877,11 @@ snippet qd, "quad sperating comma" iAm
 \quad , \quad $0
 endsnippet
 
+snippet qd "quad" im
+\quad $0
+endsnippet
+
+
 # ==== Logic Symbol ====
 
 
@@ -1036,8 +1041,14 @@ ${0}
 \]
 endsnippet
 
-snippet eqt "equation" wA
+snippet leqt "equation" wA
 \begin{equation}\label{eq: ${1}}
+  ${0}
+\end{equation}
+endsnippet
+
+snippet eqt "equation" wA
+\begin{equation}
   ${0}
 \end{equation}
 endsnippet
@@ -1193,6 +1204,10 @@ endsnippet
 
 snippet xyzb "Auto (x, y ,z)" iAm
 (x, y, z)
+endsnippet
+
+snippet atm "Atom" iAm
+\\ce{_{${3:Z}}^{${2:A}}\\text{${1:X}}_{${4:N}}}$0
 endsnippet
 
 priority 100
@@ -1616,7 +1631,7 @@ endsnippet
 ## ==== Figures ====
 
 snippet bfig "figure" wA
-\\begin{figure}[${1:h!}]
+\\begin{figure}[${1:ht!}]
 \\centering
 \\includegraphics[width = \\textwidth]{$2}
 \\caption{${3:Caption}}
