@@ -24,7 +24,7 @@
           "editorGroup.border": "#282a36",
         },
         "[monokai-best]": {
-          "editorGroup.border": "#0000"
+          "editorGroup.border": "#0000",
         },
       },
 
@@ -2284,6 +2284,8 @@
     "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
     "latex-workshop.latex.autoClean.run": "onSucceeded",
     "latex-utilities.liveReformat.snippets": [
+    
+    
 
 
     
@@ -2782,10 +2784,8 @@
             "triggerWhenComplete": true
         }
     ],
-    "editor.suggest.snippetsPreventQuickSuggestions": true,
     "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
     "editor.minimap.enabled": false,
-    "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.view.pdf.color.dark.pageColorsForeground": "rgb(255,255,255)",
     "latex-workshop.view.pdf.color.dark.pageColorsBackground": "rgb(255,255,255)",
     "latex-workshop.view.pdf.color.dark.backgroundColor": "rgb(255,255,255)",
@@ -2793,5 +2793,5 @@
     "latex-workshop.view.pdf.invert": 0.855,
     "latex-workshop.view.pdf.invertMode.grayscale": 0,
     "workbench.colorTheme": "monokai-best",
-    "zenMode.showTabs": "none",
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
 }

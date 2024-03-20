@@ -185,5 +185,15 @@
     {
         "key": "ctrl+alt+d",
         "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "ctrl+shift+enter",
+        "command": "editor.action.selectAllMatches",
+        "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "alt+enter",
+        "command": "-editor.action.selectAllMatches",
+        "when": "editorFocus && findWidgetVisible"
     }
 ]

@@ -294,15 +294,15 @@ snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])S(\d)` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "$1}$2"``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-z])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1) ``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])S([a-z])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])S([a-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_{" + m[2].substring(0, 1) + "$1}$2"``
 endsnippet
 
-snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-z])\2` "auto subscript 2" iAm
+snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([A-Za-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1)``
 endsnippet
 
