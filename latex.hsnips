@@ -151,6 +151,10 @@ snippet `((\d+)|(\d*)(\\)?([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨℏ]+)((\^|_)(\{\d+\
 \frac{``rv = m[1]``}{$1}$0
 endsnippet
 
+snippet frac "Fraction with slash" iAm
+${1:1}/$0
+endsnippet
+
 snippet ½ "Fraction 1/2" iAm
 \frac{1}{2}
 endsnippet
@@ -163,32 +167,32 @@ endsnippet
 # == Hat Operation ==
 
 # ==== Auto Capture Hat Operation ====
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hbar|BAR)` "Bar" iAm
-\overline{``rv = m[1] + m[2] + m[3]``}
+# snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hbar|BAR)` "Bar" iAm
+# \overline{``rv = m[1] + m[2] + m[3]``}
 endsnippet
 
 snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(htd|TD)` "tilde" iAm
 \tilde{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)bar` "bar" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)hbar` "bar" Am
 \bar{``rv = m[1]``}
-endsnippet
+endsnippet 
 
 context math(context)
 snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hat|HAT)` "hat" iAm
 \hat{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hvec)` "Vector postfix" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ∇]\w*({?\w*})?)(vec)` "Vector postfix" iAm
 \vec{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hket)` "Ket postfix" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(ket)` "Ket postfix" Am
 \ket{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hbra)` "Bra postfix" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(bra)` "Bra postfix" Am
 \bra{``rv = m[1]``}
 endsnippet
 
@@ -196,12 +200,12 @@ snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(rta)` "Vector postfix
 \overrightarrow{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hdot)` "dot" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(dot)` "dot" iAm
 \dot{``rv = m[1]``}
 endsnippet
 
 priority 400
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏθ]\w*({?\w*})?)(hddot)` "ddot" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏθ]\w*({?\w*})?)(ddot)` "ddot" iAm
 \ddot{``rv = m[1]``}
 endsnippet
 
@@ -250,13 +254,35 @@ snippet tp "to the ... power" iAm
 ^{${1:2}}$0
 endsnippet
 
-snippet sr "square" iAm
+snippet sr "squared" iAm
 ^2$0
 endsnippet
 
-snippet cr "square" iAm
+snippet cr "cubed" iAm
 ^3$0
 endsnippet
+
+
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( to)` "zero exponent" Am
+`` rv = m[1] + "^{0}$0"``
+endsnippet
+
+# snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( tm)` "minus exponent" Am
+# `` rv = m[1] + "^{-}$0"``
+# endsnippet
+
+# snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( ti)` "plus exponent" Am
+# `` rv = m[1] + "^{+}$0"``
+# endsnippet
+
+snippet ++ "plus exponent" iAm
+^{+}$0
+endsnippet
+
+snippet -- "minus exponent" iAm
+^{-}$0
+endsnippet
+
 
 snippet nsq "\sqrt[n]{}" iAm
 \sqrt[$1]{${2:${VISUAL}}}$0
@@ -265,6 +291,7 @@ endsnippet
 snippet sq "square root" iAm
 \sqrt{${1:${VISUAL}}}$0
 endsnippet
+
 
 # == Subscript Operation ==
 
@@ -275,6 +302,7 @@ endsnippet
 snippet sb "subscript" iAm
 _{${1:2}}$0
 endsnippet
+
 
 snippet `(})(\d)\2` "auto subscript" iAm
 `` rv = m[1] + "_" + m[2]``
@@ -488,12 +516,20 @@ snippet <> "hokje" iA
 \diamond 
 endsnippet
 
-snippet pm "±" m
+snippet pm "±" im
 ±
 endsnippet
 
-snippet rar "→" Am
-→
+snippet `\\pm` "±" iAm
+±
+endsnippet
+
+snippet mp "∓" iAm
+∓
+endsnippet
+
+snippet rar "→" iAm
+→ $0
 endsnippet 
 
 snippet uar "↑" iAm
@@ -505,7 +541,7 @@ snippet dar "↓" iAm
 endsnippet
 
 snippet Rar "⇒" Am
-⇒
+⇒ $0
 endsnippet
 
 # +... -> , \cdots
@@ -631,7 +667,7 @@ snippet øe "epsilon" iAm
 ϵ
 endsnippet
 priority 100
-snippet vøe "varepsilon" iAm
+snippet :e "varepsilon" iAm
 ε
 endsnippet
 
@@ -779,7 +815,7 @@ snippet Sigma "Sigma" iAm
 Σ
 endsnippet
 
-snippet øt "tau" iAm # Kræsjer med theta
+snippet :t "tau" iAm
 τ
 endsnippet
 
@@ -800,7 +836,7 @@ snippet øf "phi" iAm
 endsnippet
 
 priority 100
-snippet vøf "varphi" iAm
+snippet :f "varphi" iAm
 φ
 endsnippet
 
@@ -991,7 +1027,7 @@ snippet dis "displaystyle" iAm
 \displaystyle 
 endsnippet
 
-snippet le "less than" iAm
+snippet le "less than" Am
 ≤ $0
 endsnippet
 
@@ -1039,6 +1075,10 @@ snippet dm "Display Math" wA
 \[
 ${0}
 \]
+endsnippet
+
+snippet lbl "label" wA
+\label{${1}}$0
 endsnippet
 
 snippet leqt "equation" wA
@@ -1456,6 +1496,10 @@ endsnippet
 
 snippet defe "define equal" iAm
 \overset{\underset{\mathrm{def}}{}}{=}
+endsnippet
+
+snippet dec "decay" iAm
+\overset{$1}{→} $0
 endsnippet
 
 

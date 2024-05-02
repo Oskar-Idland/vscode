@@ -195,5 +195,19 @@
         "key": "alt+enter",
         "command": "-editor.action.selectAllMatches",
         "when": "editorFocus && findWidgetVisible"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "cSpell.goToPreviousSpellingIssueAndSuggest"
+    },
+    {
+        "key": "alt+c",
+        "command": "conceal.togglePrettySymbols",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "-toggleFindCaseSensitive",
+        "when": "editorFocus"
     }
 ]

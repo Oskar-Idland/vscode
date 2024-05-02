@@ -26,12 +26,12 @@
         "[monokai-best]": {
           "editorGroup.border": "#0000",
         },
-      },
-
-
+    },
+    
+    
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
     "editor.fontLigatures": true,
-
+    
     "latex-workshop.latex.tools": [
         {
             "name": "pdflatexDirs",
@@ -46,8 +46,6 @@
             ],
             "env": {}
         },
-
-
         {
             "name": "latexmk",
             "command": "latexmk",
@@ -61,6 +59,21 @@
             ],
             "env": {}
         },
+        {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+
+
         // {
         //     "name": "lualatexmk",
         //     "command": "latexmk",
@@ -69,19 +82,6 @@
         //         "-interaction=nonstopmode",
         //         "-file-line-error",
         //         "-lualatex",
-        //         "-outdir=%OUTDIR%",
-        //         "%DOC%"
-        //     ],
-        //     "env": {}
-        // },
-        // {
-        //     "name": "xelatexmk",
-        //     "command": "latexmk",
-        //     "args": [
-        //         "-synctex=1",
-        //         "-interaction=nonstopmode",
-        //         "-file-line-error",
-        //         "-xelatex",
         //         "-outdir=%OUTDIR%",
         //         "%DOC%"
         //     ],
@@ -2119,6 +2119,8 @@
     
     },
     "cSpell.userWords": [
+        "antiquark",
+        "Cabibbo",
         "Clebsch",
         "eigenfunctions",
         "eigenket",
@@ -2128,6 +2130,7 @@
         "Equipartition",
         "Gordan",
         "groundstate",
+        "Higgs",
         "holonomic",
         "Kets",
         "Macrostate",
@@ -2136,9 +2139,11 @@
         "orthonormality",
         "pyplot",
         "savefig",
+        "tauon",
         "translationally",
         "wavefunction",
-        "wavefunctions"
+        "wavefunctions",
+        "Yukawa"
     ],
     "files.autoSave": "afterDelay",
     "git.openRepositoryInParentFolders": "always",
@@ -2244,14 +2249,13 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "latex-workshop.latex.outDir": "%DIR%/out",
-    "latex-workshop.latex.watch.pdf.delay": 500,
+    "latex-workshop.latex.watch.pdf.delay": 1000,
     "workbench.editor.editorActionsLocation": "hidden",
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
     "editor.cursorSmoothCaretAnimation": "on",
     "workbench.editor.wrapTabs": true,
     "workbench.startupEditor": "none",
-    "window.zoomLevel": 1,
     "latex-workshop.latex.clean.method": "glob",
     "latex-workshop.view.outline.sync.viewer": true,
     "explorer.confirmPasteNative": false,
@@ -2282,7 +2286,6 @@
     "latex-workshop.message.error.show": false,
     "editor.stickyScroll.enabled": true,
     "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
-    "latex-workshop.latex.autoClean.run": "onSucceeded",
     "latex-utilities.liveReformat.snippets": [
     
     
@@ -2785,7 +2788,6 @@
         }
     ],
     "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
-    "editor.minimap.enabled": false,
     "latex-workshop.view.pdf.color.dark.pageColorsForeground": "rgb(255,255,255)",
     "latex-workshop.view.pdf.color.dark.pageColorsBackground": "rgb(255,255,255)",
     "latex-workshop.view.pdf.color.dark.backgroundColor": "rgb(255,255,255)",
@@ -2794,4 +2796,9 @@
     "latex-workshop.view.pdf.invertMode.grayscale": 0,
     "workbench.colorTheme": "monokai-best",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "zenMode.showTabs": "none",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": -1,
 }
