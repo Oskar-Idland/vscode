@@ -2143,6 +2143,7 @@
         "translationally",
         "wavefunction",
         "wavefunctions",
+        "Wolfenstein",
         "Yukawa"
     ],
     "files.autoSave": "afterDelay",
@@ -2800,5 +2801,5 @@
     "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.latex.autoClean.run": "onSucceeded",
     "editor.minimap.enabled": false,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": -2,
 }
