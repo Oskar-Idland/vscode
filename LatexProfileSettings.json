@@ -31,47 +31,58 @@
     
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
     "editor.fontLigatures": true,
+    "latex-workshop.message.latexlog.exclude": [
+        "Package unicode-math: Using \\overbracket and \\underbracket from",
+        "Package unicode-math: I'm going to overwrite the following commands"
+    ],
+    "latex-workshop.latex.external.build.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+    ],
     
     "latex-workshop.latex.tools": [
         {
-            "name": "pdflatexDirs",
-            "command": "pdflatex",
+            "name": "xelatex",
+            "command": "xelatex",
             "args": [
-                "-synctex=1",
+                // "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-aux-directory=auxdir",
+                // "-xelatex",
                 "-output-directory=%OUTDIR%",
-                "%DOC%"
+                "%DOCFILE_EXT%"
             ],
-            "env": {}
+            // "env": {"TEXMFHOME": "/usr/bin/xelatex"}
         },
-        {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%/out",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "xelatexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-xelatex",
-                "-outdir=%OUTDIR%",
-                "%DOC%"
-            ],
-            "env": {}
-        },
+
+        // {
+        //     "name": "pdflatexDirs",
+        //     "command": "pdflatex",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "-file-line-error",
+        //         "-aux-directory=auxdir",
+        //         "-output-directory=%OUTDIR%",
+        //         "%DOC%"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "latexmk",
+        //     "command": "latexmk",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "-file-line-error",
+        //         "-pdf",
+        //         "-outdir=%OUTDIR%/out",
+        //         "%DOC%"
+        //     ],
+        //     "env": {}
+        // },
 
 
         // {
@@ -95,62 +106,142 @@
         //     ],
         //     "env": {}
         // },
+        // {
+        //     "name": "pdflatex",
+        //     "command": "pdflatex",
+        //     "args": [
+        //         "-synctex=1",
+        //         "-interaction=nonstopmode",
+        //         "-file-line-error",
+        //         "%DOC%"
+        //     ],
+        //     "env": {"TEXMFHOME": "/usr/bin/pdflatex"}
+        // },
+        // {
+        //     "name": "bibtex",
+        //     "command": "bibtex",
+        //     "args": [
+        //         "%DOCFILE%"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "rnw2tex",
+        //     "command": "Rscript",
+        //     "args": [
+        //         "-e",
+        //         "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "jnw2tex",
+        //     "command": "julia",
+        //     "args": [
+        //         "-e",
+        //         "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "jnw2texmintex",
+        //     "command": "julia",
+        //     "args": [
+        //         "-e",
+        //         "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
+        //     ],
+        //     "env": {}
+        // },
+        // {
+        //     "name": "tectonic",
+        //     "command": "tectonic",
+        //     "args": [
+        //         "--synctex",
+        //         "--keep-logs",
+        //         "%DOC%.tex"
+        //     ],
+        //     "env": {}
+        // }
+    ],
+    "latex-workshop.latex.recipes": [
         {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ],
-            "env": {"TEXMFHOME": "/usr/bin/pdflatex"}
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
         },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name": "rnw2tex",
-            "command": "Rscript",
-            "args": [
-                "-e",
-                "knitr::opts_knit$set(concordance = TRUE); knitr::knit('%DOCFILE_EXT%')"
-            ],
-            "env": {}
-        },
-        {
-            "name": "jnw2tex",
-            "command": "julia",
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"tex\")"
-            ],
-            "env": {}
-        },
-        {
-            "name": "jnw2texmintex",
-            "command": "julia",
-            "args": [
-                "-e",
-                "using Weave; weave(\"%DOC_EXT%\", doctype=\"texminted\")"
-            ],
-            "env": {}
-        },
-        {
-            "name": "tectonic",
-            "command": "tectonic",
-            "args": [
-                "--synctex",
-                "--keep-logs",
-                "%DOC%.tex"
-            ],
-            "env": {}
-        }
+        // {
+        //     "name": "pdflatexDirs",
+        //     "tools": [
+        //         "pdflatexDirs"
+        //     ]
+        // },
+        // {
+        //     "name": "pdflatex",
+        //     "tools": [
+        //         "pdflatex"
+        //     ]
+        // },
+        // {
+        //     "name": "latexmk",
+        //     "tools": [
+        //         "latexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "latexmk (latexmkrc)",
+        //     "tools": [
+        //         "latexmk_rconly"
+        //     ]
+        // },
+        // {
+        //     "name": "latexmk (lualatex)",
+        //     "tools": [
+        //         "lualatexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "latexmk (xelatex)",
+        //     "tools": [
+        //         "xelatexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "pdflatex -> bibtex -> pdflatex * 2",
+        //     "tools": [
+        //         "pdflatex",
+        //         "bibtex",
+        //         "pdflatex",
+        //         "pdflatex"
+        //     ]
+        // },
+        // {
+        //     "name": "Compile Rnw files",
+        //     "tools": [
+        //         "rnw2tex",
+        //         "latexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "Compile Jnw files",
+        //     "tools": [
+        //         "jnw2tex",
+        //         "latexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "Compile Pnw files",
+        //     "tools": [
+        //         "pnw2tex",
+        //         "latexmk"
+        //     ]
+        // },
+        // {
+        //     "name": "tectonic",
+        //     "tools": [
+        //         "tectonic"
+        //     ]
+        // }
     ],
     "latex-workshop.linting.run": "onType",
     
@@ -2173,83 +2264,9 @@
     "latex-workshop.view.pdf.trim": 3,
     "latex-workshop.view.pdf.zoom": "page-width",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "pdflatexDirs",
-            "tools": [
-                "pdflatexDirs"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk"
-            ]
-        },
-        {
-            "name": "latexmk (latexmkrc)",
-            "tools": [
-                "latexmk_rconly"
-            ]
-        },
-        {
-            "name": "latexmk (lualatex)",
-            "tools": [
-                "lualatexmk"
-            ]
-        },
-        {
-            "name": "latexmk (xelatex)",
-            "tools": [
-                "xelatexmk"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex * 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "Compile Rnw files",
-            "tools": [
-                "rnw2tex",
-                "latexmk"
-            ]
-        },
-        {
-            "name": "Compile Jnw files",
-            "tools": [
-                "jnw2tex",
-                "latexmk"
-            ]
-        },
-        {
-            "name": "Compile Pnw files",
-            "tools": [
-                "pnw2tex",
-                "latexmk"
-            ]
-        },
-        {
-            "name": "tectonic",
-            "tools": [
-                "tectonic"
-            ]
-        }
-    ],
+
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "latex-workshop.latex.outDir": "%DIR%/out",
     "latex-workshop.latex.watch.pdf.delay": 1000,
     "workbench.editor.editorActionsLocation": "hidden",
     "editor.smoothScrolling": true,
@@ -2799,7 +2816,7 @@
     "editor.suggest.snippetsPreventQuickSuggestions": true,
     "zenMode.showTabs": "none",
     "latex-workshop.synctex.afterBuild.enabled": true,
-    "latex-workshop.latex.autoClean.run": "onSucceeded",
     "editor.minimap.enabled": false,
-    "window.zoomLevel": -2,
+    "zenMode.hideStatusBar": false,
+    "latex-workshop.latex.outDir": "%DIR%/out",
 }

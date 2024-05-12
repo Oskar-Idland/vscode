@@ -3,7 +3,8 @@
     "C_Cpp.errorSquiggles": "enabled",
     "files.autoSave": "afterDelay",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "workbench.colorTheme": "Monokai", // C:\\msys64\\mingw64\\bin\\gcc.exe
+    "workbench.colorTheme": "Monokai",
+    "C_Cpp.default.compilerPath": "${default}", // C:\\msys64\\mingw64\\bin\\gcc.exe
     "[cpp]": {
 
         "editor.wordBasedSuggestions": "off",
