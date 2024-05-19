@@ -29,6 +29,9 @@
     },
     
     
+    },
+    
+    
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
     "editor.fontLigatures": true,
     "latex-workshop.message.latexlog.exclude": [
@@ -2212,6 +2215,8 @@
     "cSpell.userWords": [
         "antiquark",
         "Cabibbo",
+        "antiquark",
+        "Cabibbo",
         "Clebsch",
         "eigenfunctions",
         "eigenket",
@@ -2222,6 +2227,7 @@
         "Gordan",
         "groundstate",
         "Higgs",
+        "Higgs",
         "holonomic",
         "Kets",
         "Macrostate",
@@ -2230,6 +2236,7 @@
         "orthonormality",
         "pyplot",
         "savefig",
+        "tauon",
         "tauon",
         "translationally",
         "wavefunction",
@@ -2814,6 +2821,11 @@
     "latex-workshop.view.pdf.invertMode.grayscale": 0,
     "workbench.colorTheme": "monokai-best",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "zenMode.showTabs": "none",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.autoClean.run": "onSucceeded",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": -1,
     "zenMode.showTabs": "none",
     "latex-workshop.synctex.afterBuild.enabled": true,
     "editor.minimap.enabled": false,
