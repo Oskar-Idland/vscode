@@ -152,7 +152,7 @@ snippet `((\d+)|(\d*)(\\)?([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨℏ]+)((\^|_)(\{\d+\
 endsnippet
 
 snippet frac "Fraction with slash" iAm
-${1:1}/$0
+${1:1}/${2:2}
 endsnippet
 
 snippet ½ "Fraction 1/2" iAm

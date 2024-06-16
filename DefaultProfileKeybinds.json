@@ -381,5 +381,9 @@
         "key": "ctrl+v",
         "command": "-latex-utilities.formattedPaste",
         "when": "config.latex-utilities.formattedPaste.useAsDefault && editorTextFocus && editorLangId == 'latex'"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.moveSelectionToPreviousFindMatch"
     }
 ]

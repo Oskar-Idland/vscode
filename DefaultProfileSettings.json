@@ -3,12 +3,10 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter.notebook.ipynb",
+        "*.ipynb": "default",
         "*.py": "default"
     },
-    "[java]": {
-        "editor.defaultFormatter": "redhat.java"
-    },
+    
     "java.refactor.renameFromFileExplorer": "autoApply",
     "python.pythonPath": "C:\\Users\\oskar\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
     "files.exclude": {
@@ -31,11 +29,8 @@
     "tabnine.experimentalAutoImports": true,
     "liveServer.settings.donotShowInfoMsg": true,
     "prettier.tabWidth": 4,
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "terminal.integrated.tabs.enabled": true,
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 12,
     "latex-workshop.view.pdf.viewer": "tab",
     "javascript.suggest.enabled": false,
     "typescript.suggest.enabled": false,
@@ -297,9 +292,6 @@
         "yscale"
     ],
 
-        /**
-     * @file "settings.json"
-     * @desc "This is what my configuration looks like" */
 
      "git-autoconfig.configList": [
         {
@@ -327,7 +319,7 @@
             "comments": "on",
             "strings": "on",
             "other": "on"
-        },
+        }
     },
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "auto",
@@ -539,7 +531,7 @@
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
     "[julia]": {
-        "editor.defaultFormatter": "julialang.language-julia"
+        "editor.defaultFormatter": "0h7z.vscode-julia-format"
     },
     "readable.enableAutoComplete": false,
     "julia.usePlotPane": false,
@@ -589,7 +581,7 @@
         "latex-expl3",
         "tex", 
         "Latex", 
-        "LaTeX",
+        "LaTeX"
     ],
     "github.copilot.enable": {
         "*": true,
@@ -673,9 +665,9 @@
             //         "ugly": "**9",
             //         "pretty": "⁹",
             //         "post": "\\b|_"
-            //      },
+            //      }
+            // ]
         },
-            // ],
         {
             
             "language": "latex",
@@ -743,7 +735,7 @@
                     "ugly": "\\\\left\\<", 
                     "pretty": "<",
                     "style": {
-                        "color": "#2DCDDF"},
+                        "color": "#2DCDDF"}
                 },
                 {
                     "ugly": "\\\\right\\>",
@@ -1186,7 +1178,7 @@
                 },
                 {
                     "ugly": "\\\\\\[",
-                    "pretty////": "."
+                    "pretty": "."
                 },
                 {
                     "ugly": "\\\\]",
@@ -1875,13 +1867,10 @@
                 {
                     "ugly": "\\\\mathbb{z}",
                     "pretty": "𝕫"
-                },
-            ],
-        },
+                }
+            ]
+        }
     ],
-
-        
-    "files.autoSaveDelay": 5000,
     "cSpell.showAutocompleteSuggestions": true,
     "latex-workshop.intellisense.citation.type": "browser",
     "editor.inlineSuggest.enabled": true,
@@ -1923,8 +1912,7 @@
     "git-autoconfig.ignoreRootList": [
         "C:/Users/Oskar/GitHub/CompFys/CompFys-Project2"
     ],
-    "files.autoSave": "afterDelay",
-    "editor.fontWeight": 700,
+    "editor.fontWeight": 500,
     "workbench.editor.empty.hint": "hidden",
     "vsicons.dontShowNewVersionMessage": true,
     "code-runner.runInTerminal": true,
@@ -1944,5 +1932,10 @@
     "workbench.list.smoothScrolling": true,
     "python.defaultInterpreterPath": "/home/oskar/anaconda3/envs/myenv/bin/python",
     "terminal.integrated.inheritEnv": false,
-    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0"
+    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
+    "shellcheck.ignorePatterns": {
+        "**/*.fish": false
+    },
+    "files.autoSave": "afterDelay",
+    "github.copilot.editor.enableAutoCompletions": true
 }

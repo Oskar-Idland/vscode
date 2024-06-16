@@ -24,7 +24,7 @@
     {
         "key": "shift+enter",
         "command": "latex-workshop.build",
-        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/"
+        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/ && !findInputFocussed"
     },
     {
         "key": "ctrl+alt+b",
@@ -90,11 +90,11 @@
         "command": "hjump.selectRight"
     },
     {
-        "key": "ctrl+shift+[Minus]",
+        "key": "ctrl+[Minus]",
         "command": "editor.action.fontZoomIn"
     },
     {
-        "key": "ctrl+shift+-",
+        "key": "ctrl+-",
         "command": "editor.action.fontZoomOut"
     },
     {
@@ -209,5 +209,30 @@
         "key": "alt+c",
         "command": "-toggleFindCaseSensitive",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.moveSelectionToPreviousFindMatch"
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+[Minus]",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.zoomOut"
     }
 ]

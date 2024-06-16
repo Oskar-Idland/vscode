@@ -25,12 +25,10 @@
         },
         "[monokai-best]": {
           "editorGroup.border": "#0000",
+          "statusBar.background": "#0000",
+          "statusBarItem.remoteBackground": "#0000",
         },
     },
-    
-    
-    },
-    
     
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
     "editor.fontLigatures": true,
@@ -52,6 +50,7 @@
             "args": [
                 // "-synctex=1",
                 "-interaction=nonstopmode",
+                "-synctex=1",
                 "-file-line-error",
                 // "-xelatex",
                 "-output-directory=%OUTDIR%",
@@ -2244,7 +2243,6 @@
         "Wolfenstein",
         "Yukawa"
     ],
-    "files.autoSave": "afterDelay",
     "git.openRepositoryInParentFolders": "always",
     "editor.bracketPairColorization.enabled": true,
     "git.enableSmartCommit": true,
@@ -2271,10 +2269,8 @@
     "latex-workshop.view.pdf.trim": 3,
     "latex-workshop.view.pdf.zoom": "page-width",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-
-    "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "latex-workshop.latex.watch.pdf.delay": 1000,
+    "latex-workshop.latex.watch.pdf.delay": 2000,
     "workbench.editor.editorActionsLocation": "hidden",
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
@@ -2302,8 +2298,6 @@
         "%DOCFILE%.log",
         "%DOCFILE%.fdb_latexmk",
         "%DOCFILE%.snm",
-        "%DOCFILE%.synctex(busy)",
-        "%DOCFILE%.synctex.gz(busy)",
         "%DOCFILE%.nav",
         "%DOCFILE%.vrb"
     ],
@@ -2311,12 +2305,7 @@
     "latex-workshop.message.error.show": false,
     "editor.stickyScroll.enabled": true,
     "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
-    "latex-utilities.liveReformat.snippets": [
-    
-    
-
-
-    
+    "latex-utilities.liveReformat.snippets": [    
         {
             "prefix": "([A-Za-z}\\)\\]])(\\d)$",
             "body": "$1_$2",
@@ -2821,14 +2810,16 @@
     "latex-workshop.view.pdf.invertMode.grayscale": 0,
     "workbench.colorTheme": "monokai-best",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "zenMode.showTabs": "none",
-    "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.latex.autoClean.run": "onSucceeded",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": -1,
-    "zenMode.showTabs": "none",
-    "latex-workshop.synctex.afterBuild.enabled": true,
-    "editor.minimap.enabled": false,
     "zenMode.hideStatusBar": false,
     "latex-workshop.latex.outDir": "%DIR%/out",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "files.autoSave": "afterDelay",
+    "zenMode.restore": false,
+    "editor.minimap.enabled": false,
+    "github.copilot.editor.enableAutoCompletions": false,
+    "editor.wordWrapColumn": 1000,
+    "latex-workshop.latex.watch.delay": 500,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "expand",
 }
