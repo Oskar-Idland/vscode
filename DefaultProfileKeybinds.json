@@ -45,7 +45,8 @@
     // Navigate buffers
     {
         "key": "shift+enter",
-        "command": "code-runner.run"
+        "command": "code-runner.run",
+        "when": "editorFocus && !findInputFocussed && !notebookEditorFocused"
     },
     {
         "key": "ctrl+alt+n",
@@ -90,11 +91,6 @@
         "key": "shift+enter",
         "command": "-workbench.action.terminal.findNext",
         "when": "terminalFindInputFocused && terminalHasBeenCreated || terminalFindInputFocused && terminalProcessSupported"
-    },
-    {
-        "key": "shift+enter",
-        "command": "-editor.action.previousMatchFindAction",
-        "when": "editorFocus && findInputFocussed"
     },
     {
         "key": "shift+enter",
@@ -149,8 +145,9 @@
         "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/"
     },
     {
-        "key": "ctrl+k",
-        "command": "workbench.action.nextEditor"
+        "key": "ctrl+pagedown",
+        "command": "workbench.action.nextEditor",
+        "when": "editorFocus"
     },
     {
         "key": "ctrl+pagedown",
@@ -385,5 +382,137 @@
     {
         "key": "ctrl+shift+d",
         "command": "editor.action.moveSelectionToPreviousFindMatch"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "responsiveFonts.fontZoomOut",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-responsiveFonts.fontZoomOut",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+c",
+        "command": "editor.action.duplicateSelection",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+z",
+        "command": "workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "-interactive.acceptChanges",
+        "when": "interactiveEditorHasProvider && interactiveEditorVisible && !interactiveEditorDocumentChanged || interactiveEditorHasProvider && interactiveEditorVisible && config.interactiveEditor.editMode != 'preview'"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "-workbench.action.chat.runInTerminal",
+        "when": "accessibleViewInCodeBlock && chatIsEnabled || chatIsEnabled && inChat"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "-workbench.action.terminal.chat.insertCommand",
+        "when": "terminalChatResponseContainsCodeBlock && terminalHasBeenCreated && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks || terminalChatResponseContainsCodeBlock && terminalProcessSupported && !terminalChatActiveRequest && !terminalChatResponseContainsMultipleCodeBlocks"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "-workbench.action.terminal.chat.insertFirstCommand",
+        "when": "terminalChatResponseContainsMultipleCodeBlocks && terminalHasBeenCreated && !terminalChatActiveRequest || terminalChatResponseContainsMultipleCodeBlocks && terminalProcessSupported && !terminalChatActiveRequest"
+    },
+    {
+        "key": "ctrl+alt+enter",
+        "command": "notebook.execute",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.quickOpen",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+g ctrl+b",
+        "command": "git.checkout",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+g ctrl+m",
+        "command": "git.merge",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+g ctrl+c",
+        "command": "workbench.scm.focus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "interactive.execute",
+        "when": "config.interactiveWindow.executeWithShiftEnter && activeEditor == 'workbench.editor.interactive' && !findInputFocussed"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-interactive.execute",
+        "when": "config.interactiveWindow.executeWithShiftEnter && activeEditor == 'workbench.editor.interactive'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "repl.execute",
+        "when": "config.interactiveWindow.executeWithShiftEnter && activeEditor == 'workbench.editor.repl' && !findInputFocussed"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-repl.execute",
+        "when": "config.interactiveWindow.executeWithShiftEnter && activeEditor == 'workbench.editor.repl'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "python.execInREPL",
+        "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !accessibilityModeEnabled && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python' && !findInputFocussed"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execInREPL",
+        "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !accessibilityModeEnabled && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+g ctrl+p",
+        "command": "git.push",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "-markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     }
 ]

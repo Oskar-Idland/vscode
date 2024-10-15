@@ -1,6 +1,23 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
+        "key": "ctrl+l",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "cSpell.goToPreviousSpellingIssue",
+                {
+                    "command": "editor.action.codeAction",
+                    "args": {
+                        "kind": "quickfix",
+                        "apply": "first"
+                    }
+                },
+                "cursorUndo",
+            ]
+        }
+    },
+    {
         "key": "ctrl+j",
         "command": "extension.jumpy-word"
     },
@@ -21,15 +38,27 @@
         "key": "ctrl+shift+[Comma]",
         "command": "workbench.action.openSettingsJson"
     },
-    {
-        "key": "shift+enter",
-        "command": "latex-workshop.build",
-        "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/ && !findInputFocussed"
-    },
+    // {
+    //    "key": "shift+enter",
+    //    "command": "latex-workshop.build",
+    //    "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^doctex$|^rsweave$|^jlweave$|^pweave$/"
+    // },
     {
         "key": "ctrl+alt+b",
         "command": "-latex-workshop.build",
         "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/"
+    },
+    {
+        "command": "runCommands",
+        "key": "shift+enter",
+        "args": {
+            "commands": [
+                "editor.action.formatDocument",
+                "latex-workshop.build"
+            ],
+            "when": "editorTextFocus && !editorReadonly && !inCompositeEditor && !notebookEditorFocused && !findInputFocussed && !replaceInputFocussed && editorLangId =~ /^latex$|^latex-expl3$|^doctex$|^rsweave$|^jlweave$|^pweave$"
+        },
+        "when": "editorFocus && !findInputFocussed"
     },
     {
         "key": "ctrl+shift+o",
@@ -234,5 +263,62 @@
     {
         "key": "ctrl+-",
         "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "alt+n",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+g ctrl+b",
+        "command": "git.checkout",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+g ctrl+m",
+        "command": "git.merge",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+k v",
+        "command": "-markdown.showPreviewToSide",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+g ctrl+f",
+        "command": "git.fetch",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+p",
+        "command": "umath.preview.toggleMathPreview"
     }
 ]

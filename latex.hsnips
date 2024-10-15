@@ -1,3 +1,4 @@
+
 global
 // Change the sum snippet as its own
 // Go through all snippets that can be shortend
@@ -130,6 +131,7 @@ function createTableNoLine(nrows, ncols) {
 }
 
 
+// Not yet implemented
 function math(context) {
     return context.scopes.some(s => s.startsWith("meta.math"));
 }
@@ -143,20 +145,16 @@ endsnippet
 
 # == Fraction Match ==
 
+snippet frac "Fraction with slash" iAm 
+$1/$0
+endsnippet
+
 snippet // "Fraction" iAm
 \\frac{${1:${VISUAL}}}{$2}$0
 endsnippet
 
 snippet `((\d+)|(\d*)(\\)?([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨℏ]+)((\^|_)(\{\d+\}|\d))*)/` "Fraction no ()" iAm
 \frac{``rv = m[1]``}{$1}$0
-endsnippet
-
-snippet frac "Fraction with slash" iAm
-${1:1}/${2:2}
-endsnippet
-
-snippet ½ "Fraction 1/2" iAm
-\frac{1}{2}
 endsnippet
 
 priority 200
@@ -167,32 +165,32 @@ endsnippet
 # == Hat Operation ==
 
 # ==== Auto Capture Hat Operation ====
-# snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hbar|BAR)` "Bar" iAm
-# \overline{``rv = m[1] + m[2] + m[3]``}
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hbar|BAR)` "Bar" iAm
+\overline{``rv = m[1] + m[2] + m[3]``}
 endsnippet
 
 snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(htd|TD)` "tilde" iAm
 \tilde{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)hbar` "bar" Am
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)bar` "bar" iAm
 \bar{``rv = m[1]``}
-endsnippet 
+endsnippet
 
-context math(context)
+
 snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hat|HAT)` "hat" iAm
 \hat{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ∇]\w*({?\w*})?)(vec)` "Vector postfix" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hvec)` "Vector postfix" iAm
 \vec{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(ket)` "Ket postfix" Am
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏνμ]\w*({?\w*})?)(ket)` "Ket postfix" iAm
 \ket{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(bra)` "Bra postfix" Am
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(bra)` "Bra postfix" iAm
 \bra{``rv = m[1]``}
 endsnippet
 
@@ -200,12 +198,12 @@ snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(rta)` "Vector postfix
 \overrightarrow{``rv = m[1]``}
 endsnippet
 
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(dot)` "dot" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hdot)` "dot" iAm
 \dot{``rv = m[1]``}
 endsnippet
 
 priority 400
-snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏθ]\w*({?\w*})?)(ddot)` "ddot" iAm
+snippet `(\\?[a-zA-Zα-ωϵϕΦΠΣΘΩΨℏ]\w*({?\w*})?)(hddot)` "ddot" iAm
 \ddot{``rv = m[1]``}
 endsnippet
 
@@ -254,35 +252,13 @@ snippet tp "to the ... power" iAm
 ^{${1:2}}$0
 endsnippet
 
-snippet sr "squared" iAm
+snippet sr "square" iAm
 ^2$0
 endsnippet
 
-snippet cr "cubed" iAm
+snippet cr "square" iAm
 ^3$0
 endsnippet
-
-
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( to)` "zero exponent" Am
-`` rv = m[1] + "^{0}$0"``
-endsnippet
-
-# snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( tm)` "minus exponent" Am
-# `` rv = m[1] + "^{-}$0"``
-# endsnippet
-
-# snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])( ti)` "plus exponent" Am
-# `` rv = m[1] + "^{+}$0"``
-# endsnippet
-
-snippet ++ "plus exponent" iAm
-^{+}$0
-endsnippet
-
-snippet -- "minus exponent" iAm
-^{-}$0
-endsnippet
-
 
 snippet nsq "\sqrt[n]{}" iAm
 \sqrt[$1]{${2:${VISUAL}}}$0
@@ -291,7 +267,6 @@ endsnippet
 snippet sq "square root" iAm
 \sqrt{${1:${VISUAL}}}$0
 endsnippet
-
 
 # == Subscript Operation ==
 
@@ -303,39 +278,46 @@ snippet sb "subscript" iAm
 _{${1:2}}$0
 endsnippet
 
-
 snippet `(})(\d)\2` "auto subscript" iAm
 `` rv = m[1] + "_" + m[2]``
 endsnippet
 
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])(\d)` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])(\d)` "auto subscript" iAm
 `` rv = m[1] + "_" + m[2]``
 endsnippet
 
 priority 100
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])_(\d{2})` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])_(\d{2})` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "}$0" ``
 endsnippet
 
 priority 100
-snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂])S(\d)` "auto subscript" iAm
+snippet `([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ])S(\d)` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "$1}$2"``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([a-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ}])([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1) ``
 endsnippet
 
-snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ∂}])S([a-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
+snippet `\b(?<!\\)([A-Za-zΑ-Ζα-ωϵϕΦΠΣΘΩΨ}])S([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_{" + m[2].substring(0, 1) + "$1}$2"``
 endsnippet
 
-snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂}])([A-Za-zα-ωϵϕΦΠΣΘΩΨ∂])\2` "auto subscript 2" iAm
+snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ}])([a-z])\2` "auto subscript 2" iAm
 `` rv = m[1] + "_" + m[2].substring(0, 1)``
 endsnippet
 
-snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ∂])_(\d{2})` "auto subscript" iAm
+snippet `([Α-Ζα-ωϵϕΦΠΣΘΩΨ])_(\d{2})` "auto subscript" iAm
 `` rv = m[1] + "_{" + m[2] + "}$0" ``
+endsnippet
+
+snippet -- "Minus subscript" iAm
+_{-}$0
+endsnippet
+
+snippet ++ "Plus subscript" iAm
+_{+}$0
 endsnippet
 
 # Custom: Add more greek letters
@@ -385,11 +367,11 @@ snippet tit "text it" A
 \textit{${1:${VISUAL}}}$0
 endsnippet
 
-snippet dlin "doubble underline" iAm 
+snippet duline "doubble underline" iA 
 \underline{\underline{${1:${VISUAL}}}}$0
 endsnippet
 
-snippet lin "underline" iAm
+snippet uline "underline" iA
 \underline{${1:${VISUAL}}}$0
 endsnippet
 
@@ -516,20 +498,12 @@ snippet <> "hokje" iA
 \diamond 
 endsnippet
 
-snippet pm "±" im
+snippet pm "±" m
 ±
 endsnippet
 
-snippet `\\pm` "±" iAm
-±
-endsnippet
-
-snippet mp "∓" iAm
-∓
-endsnippet
-
-snippet rar "→" iAm
-→ $0
+snippet rar "→" Am
+→
 endsnippet 
 
 snippet uar "↑" iAm
@@ -541,7 +515,7 @@ snippet dar "↓" iAm
 endsnippet
 
 snippet Rar "⇒" Am
-⇒ $0
+⇒
 endsnippet
 
 # +... -> , \cdots
@@ -603,17 +577,10 @@ snippet `(?<!\\)(min|max|argmin|argmax|sup)` "min|max|argmin|argmax|sup" iAm
 \\``rv = m[1]``_{$1}
 endsnippet
 
-snippet hsin "sinh" iAm
-\sinh
+snippet `(?<!\\)(sin|cos|arccot|cot|csc|ln|exp|det|perp|arcsin|arccos|arctan|arccot|arccsc|arcsec|ell|nabla|notin|not)` "function" iAm
+\\``rv = m[1]``$0
 endsnippet
 
-snippet hcos "cosh" iAm
-\cosh
-endsnippet
-
-snippet `(?<!\\)(sin|cos|arccot|cot|csc|ln|exp|det|perp|arcsin|arccos|arctan|tan|arccot|arccsc|arcsec|ell|nabla|notin|not)` "function" iAm
-\\``rv = m[1]`` 
-endsnippet
 
 snippet alpha "alpha" iAm
 α
@@ -667,7 +634,7 @@ snippet øe "epsilon" iAm
 ϵ
 endsnippet
 priority 100
-snippet :e "varepsilon" iAm
+snippet vøe "varepsilon" iAm
 ε
 endsnippet
 
@@ -763,7 +730,7 @@ snippet øc "xi" iAm
 ξ
 endsnippet
 
-snippet xi "xi" iAm
+snippet :x "xi" iAm
 ξ
 endsnippet
 
@@ -771,7 +738,7 @@ snippet øC "Xi" iAm
 Ξ
 endsnippet
 
-snippet Xi "Xi" iAm
+snippet :X "Xi" iAm
 Ξ
 endsnippet
 
@@ -815,7 +782,7 @@ snippet Sigma "Sigma" iAm
 Σ
 endsnippet
 
-snippet :t "tau" iAm
+snippet øt "tau" iAm # Kræsjer med theta
 τ
 endsnippet
 
@@ -836,7 +803,7 @@ snippet øf "phi" iAm
 endsnippet
 
 priority 100
-snippet :f "varphi" iAm
+snippet vøf "varphi" iAm
 φ
 endsnippet
 
@@ -896,10 +863,6 @@ snippet øh "ħ" iAm
 ℏ
 endsnippet
 
-snippet :p "partial ∂" iAm 
-∂
-endsnippet
-
 snippet `(?<!\\)(mu|alpha|sigma|rho|beta|gamma|delta|pi|zeta|eta|varepsilon|theta|iota|kappa|vartheta|lambda|nu|pi|rho|tau|upsilon|varphi|phi|chi|psi|omega|Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega)` "greek" iAm
 \\``rv = m[1]``
 endsnippet
@@ -912,11 +875,6 @@ endsnippet
 snippet qd, "quad sperating comma" iAm 
 \quad , \quad $0
 endsnippet
-
-snippet qd "quad" im
-\quad $0
-endsnippet
-
 
 # ==== Logic Symbol ====
 
@@ -1020,7 +978,7 @@ snippet -- "setminus" iAm
 endsnippet
 
 snippet ge "greater than" Am
-≥ $0
+≥
 endsnippet
 
 snippet dis "displaystyle" iAm
@@ -1028,11 +986,11 @@ snippet dis "displaystyle" iAm
 endsnippet
 
 snippet le "less than" Am
-≤ $0
+≤
 endsnippet
 
 snippet != "no equals" iAm
-≠ 
+≠
 endsnippet
 
 snippet == " constan equals" iAm
@@ -1060,39 +1018,22 @@ snippet << "<<" iAm
 endsnippet
 
 
-
-
-
 # == Auto Environment ==
 
 # ==== Auto Math Mode ====
-
 snippet im "inline Math" wA
 $${1}$$0
 endsnippet
-
 snippet dm "Display Math" wA
 \[
 ${0}
 \]
 endsnippet
-
-snippet lbl "label" wA
-\label{${1}}$0
-endsnippet
-
-snippet leqt "equation" wA
+snippet eqt "equation" wA
 \begin{equation}\label{eq: ${1}}
   ${0}
 \end{equation}
 endsnippet
-
-snippet eqt "equation" wA
-\begin{equation}
-  ${0}
-\end{equation}
-endsnippet
-
 snippet eqs "equation*" wA
 \begin{equation*}
   ${0}
@@ -1100,14 +1041,12 @@ snippet eqs "equation*" wA
 endsnippet
 
 # ==== Common Environment ====
-
 snippet case "cases" iAm
 \begin{cases}
   ${1:equation}, &\text{ ${2:if} }${3:case}\\\\
   ${4:equation}, &\text{ ${5:if} }${6:case}
 \end{cases}
 endsnippet
-
 snippet ali "aligned" iAm
 \begin{aligned}
 $0 \\\\
@@ -1172,35 +1111,35 @@ snippet norm iAm
 \left\|${1:${VISUAL}}\right\|_{$2}$3
 endsnippet
 
-snippet obket iAm
+snippet ob-ket iAm
 \bra{${1:${VISUAL}}}$2\ket{${3}}$0
 endsnippet
 
-snippet bket iAm 
+snippet b-ket iAm 
 \bra{${1:${VISUAL}}}\ket{${2}}$0
 endsnippet
 
-snippet ioket iAm
+snippet io-ket iAm
 \ket{$1} ⊗ \ket{$1}$0
 endsnippet
 
-snippet oket iAm
+snippet o-ket iAm
 \ket{$1} ⊗ \ket{$2}$0
 endsnippet
 
-snippet uket iAm
+snippet u-ket iAm
 \ket{↑}$0
 endsnippet
 
-snippet dket iAm
+snippet d-ket iAm
 \ket{↓}$0
 endsnippet
 
-snippet ubra iAm
+snippet u-bra iAm
 \bra{↑}$0
 endsnippet
 
-snippet dbra iAm
+snippet d-bra iAm
 \bra{↓}$0
 endsnippet
 
@@ -1208,15 +1147,15 @@ snippet ket iAm
 \ket{${1:${VISUAL}}}$0
 endsnippet
 
-snippet obra iAm
+snippet o-bra iAm
 \bra{$1} ⊗ \bra{$2}$0
 endsnippet
 
-snippet kbra imA
+snippet k-bra imA
 \ket{${1:${VISUAL}}}\bra{${2}}$0
 endsnippet
 
-snippet bra Am
+snippet bra iAm
 \bra{${1:${VISUAL}}}$0
 endsnippet
 
@@ -1244,10 +1183,6 @@ endsnippet
 
 snippet xyzb "Auto (x, y ,z)" iAm
 (x, y, z)
-endsnippet
-
-snippet atm "Atom" iAm
-\\ce{_{${3:Z}}^{${2:A}}\\text{${1:X}}_{${4:N}}}$0
 endsnippet
 
 priority 100
@@ -1316,24 +1251,39 @@ snippet `(?<!\\)prod` "product" iAm
 endsnippet
 
 snippet `(?<!\\)part` "∂/∂t" iAm
-\frac{∂ ${1}}{∂ ${2:t}}$0
+\frac{∂ ${1}}{∂${2:t}}$0
 endsnippet
 
 priority 100
-snippet `(?<!\\)dpart` "∂^2/∂x^2" iAm
-\frac{∂^2 ${1}}{∂ ${2:x}^2}$0
+snippet `(?<!\\)dpart` "∂^2/∂t^2" iAm
+\frac{∂^2${1}}{∂${2:t}^2}$0
 endsnippet
 
 snippet `(?<!\\)parx` "∂/∂x" iAm
 \frac{∂$1}{∂x}$0
 endsnippet
 
+priority 100
+snippet `(?<!\\)dparx` "∂^2/∂x^2" iAm
+\frac{∂^2${1}}{∂${2:x}^2}$0
+endsnippet
+
 snippet `(?<!\\)pary` "∂/∂y" iAm
 \frac{∂$1}{∂y}$0
 endsnippet
 
+priority 100
+snippet `(?<!\\)dpary` "∂^2/∂y^2" iAm
+\frac{∂^2${1}}{∂${2:y}^2}$0
+endsnippet
+
 snippet `(?<!\\)parz` "∂/∂z" iAm
 \frac{∂$1}{∂z}$0
+endsnippet
+
+priority 100
+snippet `(?<!\\)dparz` "∂^2/∂z^2" iAm
+\frac{∂^2${1}}{∂${2:z}^2}$0
 endsnippet
 
 priority 300
@@ -1341,9 +1291,11 @@ snippet `(?<!\\)diff` "∂/∂x" iAm
 \frac{\mathrm{d}${1:y}}{\mathrm{d}${2:x}}$0
 endsnippet
 
+
+
 priority 300
 snippet dd "dd" wAm
-\mathrm{d}
+\ \mathrm{d}
 endsnippet
 
 snippet buu "bigcup" iAm
@@ -1390,21 +1342,6 @@ snippet toint "closed tripple integral" iAm
 endsnippet
 
 priority 300
-snippet boint "defined closed integral" iAm
-∮_{${1:C}}$0
-endsnippet
-
-priority 400
-snippet bdoint "defined closed double integral" iAm
-∯_{${1:S}}$0
-endsnippet
-
-priority 400
-snippet btoint "defined tripple integral" iAm
-∰_{${1:V}}$0
-endsnippet
-
-priority 300
 snippet bint "definite integral" iAm
 ∫_{${1:-∞}}^{${2:∞}} ${3} \ \\mathrm{d}${4:x}$0
 endsnippet
@@ -1418,7 +1355,6 @@ priority 300
 snippet btint "definite integral" iAm
 ∫_{${1:-∞}}^{${2:∞}} ∫_{${3:-∞}}^{${4:∞}} ∫_{${5:-∞}}^{${6:∞}} ${7} \ \\mathrm{d}${8:x} \ \\mathrm{d}${9:y} \ \\mathrm{d}${10:z}$0
 endsnippet
-
 
 priority 200
 # o - closed integral, n - normal integral? l - line integral, n - normal integral? d - double integral, t - triple integral
@@ -1498,10 +1434,6 @@ snippet defe "define equal" iAm
 \overset{\underset{\mathrm{def}}{}}{=}
 endsnippet
 
-snippet dec "decay" iAm
-\overset{$1}{→} $0
-endsnippet
-
 
 # == Matrix ==
 
@@ -1509,7 +1441,7 @@ endsnippet
 
 snippet pmat "pmat" wm
 \begin{pmatrix} 
-    ${1: } 
+    $1 
 \end{pmatrix} $0
 endsnippet
 
@@ -1605,19 +1537,18 @@ snippet \box "Box"
 endsnippet
 
 priority 300
-snippet `tableh(\d)(\d)` "create table with rows and columns" wA
+snippet `tableh-(\d)(\d)` "create table with rows and columns" wA
 ``
 rv = createTable(m[1], m[2]);
 ``
 endsnippet
 
 priority 300
-snippet `table(\d)(\d)` "create table with rows and columns" wA
+snippet `table-(\d)(\d)` "create table with rows and columns" wA
 ``
 rv = createTableNoLine(m[1], m[2]);
 ``
 endsnippet
-
 
 snippet tabular "tabular" wA
 \begin{table}[${1:h!}]
@@ -1629,37 +1560,33 @@ snippet tabular "tabular" wA
 endsnippet
 
  === Sections ===
-snippet chap "Chapter" w
-\\chapter{${1:${VISUAL}}}
-$0
-endsnippet
-
-snippet Sec "Section with index" w
+ 
+snippet sec "Section" w
 \\section*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet sec "Section" w
+snippet Sec "Section with index" w
 \\section{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet Ssec "Subsection with index" w
+snippet ssec "Subsection" w
 \\subsection*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet ssec "Subsection" w
+snippet Ssec "Subsection with index" w
 \\subsection{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet Sssec "Subsubsection with index" w
+snippet sssec "Subsubsection" w
 \\subsubsection*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet sssec "Subsubsection" w
+snippet Sssec "Subsubsection with index" w
 \\subsubsection{${1:${VISUAL}}}
 $0
 endsnippet
@@ -1673,9 +1600,8 @@ endsnippet
 
 
 ## ==== Figures ====
-
 snippet bfig "figure" wA
-\\begin{figure}[${1:ht!}]
+\\begin{figure}[${1:h!}]
 \\centering
 \\includegraphics[width = \\textwidth]{$2}
 \\caption{${3:Caption}}
@@ -1683,8 +1609,7 @@ snippet bfig "figure" wA
 \\end{figure}$5
 endsnippet
 
-
-snippet bsfig "subfigure" wA 
+snippet bsfig "subfigure" wAh
 \begin{figure}
   \centering
   \begin{subfigure}{.4\textwidth}

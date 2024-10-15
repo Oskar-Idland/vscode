@@ -1,35 +1,34 @@
 {
     "workbench.colorCustomizations": {
         "[Dracula.min]": {
-          // Dracula.min
-          // https://github.com/ashrafhadden/dracula.min#settingsjson
-          "breadcrumb.background": "#282a36",
-          "editor.background": "#282a36",
-          "editorGroupHeader.tabsBackground": "#282a36",
-          "panel.background": "#282a36",
-          "sideBar.background": "#282a36",
-          "sideBar.border": "#282a36",
-          "sideBarSectionHeader.background": "#282a36",
-          "sideBarSectionHeader.border": "#282a36",
-          "statusBar.background": "#282a36",
-          "statusBar.border": "#282a36",
-          "statusBar.noFolderBackground": "#282a36",
-          "tab.activeBackground": "#282a36",
-          "tab.border": "#282a36",
-          "tab.inactiveBackground": "#282a36",
-          "terminal.background": "#282a36",
-          "terminal.border": "#282a36",
-          "titleBar.activeBackground": "#282a36",
-          "titleBar.inactiveBackground": "#282a36",
-          "editorGroup.border": "#282a36",
+            // Dracula.min
+            // https://github.com/ashrafhadden/dracula.min#settingsjson
+            "breadcrumb.background": "#282a36",
+            "editor.background": "#282a36",
+            "editorGroupHeader.tabsBackground": "#282a36",
+            "panel.background": "#282a36",
+            "sideBar.background": "#282a36",
+            "sideBar.border": "#282a36",
+            "sideBarSectionHeader.background": "#282a36",
+            "sideBarSectionHeader.border": "#282a36",
+            "statusBar.background": "#282a36",
+            "statusBar.border": "#282a36",
+            "statusBar.noFolderBackground": "#282a36",
+            "tab.activeBackground": "#282a36",
+            "tab.border": "#282a36",
+            "tab.inactiveBackground": "#282a36",
+            "terminal.background": "#282a36",
+            "terminal.border": "#282a36",
+            "titleBar.activeBackground": "#282a36",
+            "titleBar.inactiveBackground": "#282a36",
+            "editorGroup.border": "#282a36",
         },
         "[monokai-best]": {
-          "editorGroup.border": "#0000",
-          "statusBar.background": "#0000",
-          "statusBarItem.remoteBackground": "#0000",
+            "editorGroup.border": "#0000",
+            "statusBar.background": "#0000",
+            "statusBarItem.remoteBackground": "#0000",
         },
     },
-    
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
     "editor.fontLigatures": true,
     "latex-workshop.message.latexlog.exclude": [
@@ -42,13 +41,11 @@
         "-file-line-error",
         "%DOC%"
     ],
-    
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-                // "-synctex=1",
                 "-interaction=nonstopmode",
                 "-synctex=1",
                 "-file-line-error",
@@ -58,20 +55,19 @@
             ],
             // "env": {"TEXMFHOME": "/usr/bin/xelatex"}
         },
-
-        // {
-        //     "name": "pdflatexDirs",
-        //     "command": "pdflatex",
-        //     "args": [
-        //         "-synctex=1",
-        //         "-interaction=nonstopmode",
-        //         "-file-line-error",
-        //         "-aux-directory=auxdir",
-        //         "-output-directory=%OUTDIR%",
-        //         "%DOC%"
-        //     ],
-        //     "env": {}
-        // },
+        {
+            "name": "pdflatexDirs",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-aux-directory=auxdir",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
         // {
         //     "name": "latexmk",
         //     "command": "latexmk",
@@ -85,8 +81,6 @@
         //     ],
         //     "env": {}
         // },
-
-
         // {
         //     "name": "lualatexmk",
         //     "command": "latexmk",
@@ -108,17 +102,20 @@
         //     ],
         //     "env": {}
         // },
-        // {
-        //     "name": "pdflatex",
-        //     "command": "pdflatex",
-        //     "args": [
-        //         "-synctex=1",
-        //         "-interaction=nonstopmode",
-        //         "-file-line-error",
-        //         "%DOC%"
-        //     ],
-        //     "env": {"TEXMFHOME": "/usr/bin/pdflatex"}
-        // },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXMFHOME": "/usr/bin/pdflatex"
+            }
+        },
         // {
         //     "name": "bibtex",
         //     "command": "bibtex",
@@ -178,12 +175,12 @@
         //         "pdflatexDirs"
         //     ]
         // },
-        // {
-        //     "name": "pdflatex",
-        //     "tools": [
-        //         "pdflatex"
-        //     ]
-        // },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
         // {
         //     "name": "latexmk",
         //     "tools": [
@@ -246,7 +243,6 @@
         // }
     ],
     "latex-workshop.linting.run": "onType",
-    
     "latex-workshop.intellisense.citation.type": "browser",
     "editor.inlineSuggest.enabled": true,
     "todohighlight.isEnable": true,
@@ -297,1185 +293,1314 @@
             //         "post": "\\b|_"
             //     },
             // ],
-            
             "language": "latex",
             "substitutions": [
                 // Bras and Kets
-                    { 
-                    "ugly": "(?:\\\\ket{)",     
-                    "pretty": "|", 
-                    "style": {"color": "#2DCDDF"}
-                    },
-                    { 
-                    "ugly": "(?<=\\\\ket{[^}]+)}", 
-                    "pretty": "⟩", 
-                    "style": {"color": "#2DCDDF"}
-                    },
-                    { 
-                    "ugly": "(?:\\\\bra{)",     
-                    "pretty": "⟨", 
-                    "style": {"color": "#2DCDDF"}
-                    },
-                    { 
-                    "ugly": "(?<=\\\\bra{[^}]+)}", 
-                    "pretty": "|", 
-                    "style": {"color": "#2DCDDF"}
-                    },
-                    // {
-                    //     "ugly": "(?:\\\\vec{)",
-                    //     "pretty": "",
-                    // },
-                    // {
-                    //     "ugly": "(?<=\\\\vec{[^}]+)}",
-                    //     "pretty": "̂",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    
-                    // {
-                    // "ugly": "\\\\ket\\{0\\}",
-                    // "pretty": "|0⟩",
-                    // "style": {
-                    //     "color": "#2DCDDF"}
-                    // },
-                    // {
-                    // "ugly": "\\\\ket\\{1\\}",
-                    // "pretty": "|1⟩",
-                    // "style": {
-                    //     "color": "#2DCDDF"}
-                    // },
-                    // {
-                    // "ugly": "\\\\ket\\{↑}",
-                    // "pretty": "|↑⟩",
-                    // "style": {
-                    //     "color": "#2DCDDF"}
-                    // },
-                    // {
-                    // "ugly": "\\\\ket\\{↓}",
-                    // "pretty": "|↓⟩",
-                    // "style": {
-                    //     "color": "#2DCDDF"}
-                    // },
-                    // {
-                    // "ugly": "\\\\ket\\{a\\}",
-                    // "pretty": "|a⟩",
-                    // "style": {
-                    //     "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{b\\}",
-                    //     "pretty": "|b⟩",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{c\\}",
-                    //     "pretty": "|c⟩",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{d\\}",
-                    //     "pretty": "|d⟩",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{n\\}",
-                    //     "pretty": "|n⟩",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{m\\}",
-                    //     "pretty": "|m⟩",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{u\\}",
-                    //     "pretty": "|u⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },            
-                    // {
-                    //     "ugly": "\\\\ket\\{v\\}",
-                    //     "pretty": "|v⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{w\\}",
-                    //     "pretty": "|w⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{ψ\\}",
-                    //     "pretty": "|ψ⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{ψ\\}",
-                    //     "pretty": "|Ψ⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{λ\\}",
-                    //     "pretty": "|λ⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\ket\\{ϕ\\}",
-                    //     "pretty": "|ϕ⟩",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-                    // },
-
-
-                    // {
-                    //     "ugly": "\\\\bra\\{0\\}",
-                    //     "pretty": "⟨0|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{1\\}",
-                    //     "pretty": "⟨1|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{↑\\}",
-                    //     "pretty": "⟨↑|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{↓\\}",
-                    //     "pretty": "⟨↓|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{a\\}",
-                    //     "pretty": "⟨a|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{b\\}",
-                    //     "pretty": "⟨b|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    //  },
-                    // {
-                    //     "ugly": "\\\\bra\\{c\\}",
-                    //     "pretty": "⟨c|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{d\\}",
-                    //     "pretty": "⟨d|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{n\\}",
-                    //     "pretty": "⟨n|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{m\\}",
-                    //     "pretty": "⟨m|",
-                    //     "style": {
-                    //         "color": "#2DCDDF"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{u\\}",
-                    //     "pretty": "⟨u|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },            
-                    // {
-                    //     "ugly": "\\\\bra\\{v\\}",
-                    //     "pretty": "⟨v|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{w\\}",
-                    //     "pretty": "⟨w|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{ψ\\}",
-                    //     "pretty": "⟨ψ|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{Ψ\\}",
-                    //     "pretty": "⟨Ψ|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-
-                    // },
-                    // {
-                    //     "ugly": "\\\\bra\\{λ\\}",
-                    //     "pretty": "⟨λ|",
-                    //     "style": {
-                    //         "color": "#2DCD"}
-                    // },
-
-
-                    
-
-
+                {
+                    "ugly": "(?:\\\\ket{)",
+                    "pretty": "|",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "(?<=\\\\ket{[^}]+)}",
+                    "pretty": "⟩",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "(?:\\\\bra{)",
+                    "pretty": "⟨",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "(?<=\\\\bra{[^}]+)}",
+                    "pretty": "|",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                // {
+                //     "ugly": "(?:\\\\vec{)",
+                //     "pretty": "",
+                // },
+                // {
+                //     "ugly": "(?<=\\\\vec{[^}]+)}",
+                //     "pretty": "̂",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                // "ugly": "\\\\ket\\{0\\}",
+                // "pretty": "|0⟩",
+                // "style": {
+                //     "color": "#2DCDDF"}
+                // },
+                // {
+                // "ugly": "\\\\ket\\{1\\}",
+                // "pretty": "|1⟩",
+                // "style": {
+                //     "color": "#2DCDDF"}
+                // },
+                // {
+                // "ugly": "\\\\ket\\{↑}",
+                // "pretty": "|↑⟩",
+                // "style": {
+                //     "color": "#2DCDDF"}
+                // },
+                // {
+                // "ugly": "\\\\ket\\{↓}",
+                // "pretty": "|↓⟩",
+                // "style": {
+                //     "color": "#2DCDDF"}
+                // },
+                // {
+                // "ugly": "\\\\ket\\{a\\}",
+                // "pretty": "|a⟩",
+                // "style": {
+                //     "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{b\\}",
+                //     "pretty": "|b⟩",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{c\\}",
+                //     "pretty": "|c⟩",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{d\\}",
+                //     "pretty": "|d⟩",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{n\\}",
+                //     "pretty": "|n⟩",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{m\\}",
+                //     "pretty": "|m⟩",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{u\\}",
+                //     "pretty": "|u⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },            
+                // {
+                //     "ugly": "\\\\ket\\{v\\}",
+                //     "pretty": "|v⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{w\\}",
+                //     "pretty": "|w⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{ψ\\}",
+                //     "pretty": "|ψ⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{ψ\\}",
+                //     "pretty": "|Ψ⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{λ\\}",
+                //     "pretty": "|λ⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\ket\\{ϕ\\}",
+                //     "pretty": "|ϕ⟩",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{0\\}",
+                //     "pretty": "⟨0|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{1\\}",
+                //     "pretty": "⟨1|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{↑\\}",
+                //     "pretty": "⟨↑|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{↓\\}",
+                //     "pretty": "⟨↓|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{a\\}",
+                //     "pretty": "⟨a|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{b\\}",
+                //     "pretty": "⟨b|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                //  },
+                // {
+                //     "ugly": "\\\\bra\\{c\\}",
+                //     "pretty": "⟨c|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{d\\}",
+                //     "pretty": "⟨d|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{n\\}",
+                //     "pretty": "⟨n|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{m\\}",
+                //     "pretty": "⟨m|",
+                //     "style": {
+                //         "color": "#2DCDDF"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{u\\}",
+                //     "pretty": "⟨u|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },            
+                // {
+                //     "ugly": "\\\\bra\\{v\\}",
+                //     "pretty": "⟨v|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{w\\}",
+                //     "pretty": "⟨w|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{ψ\\}",
+                //     "pretty": "⟨ψ|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{Ψ\\}",
+                //     "pretty": "⟨Ψ|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
+                // {
+                //     "ugly": "\\\\bra\\{λ\\}",
+                //     "pretty": "⟨λ|",
+                //     "style": {
+                //         "color": "#2DCD"}
+                // },
                 // Parentheses 
-
-                    {
-                        "ugly": "\\\\left\\(", 
-                        "pretty": "(",
-                        "style": {
-                            "color": "#e91e63"}
+                {
+                    "ugly": "\\\\left\\(",
+                    "pretty": "(",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\right\\)",
+                    "pretty": ")",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\left\\[",
+                    "pretty": "[",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\right\\]",
+                    "pretty": "]",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\left\\\\{",
+                    "pretty": "{",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\right\\\\}",
+                    "pretty": "}",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\left\\|",
+                    "pretty": "|",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\right\\|",
+                    "pretty": "|",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\left\\.",
+                    "pretty": "."
+                },
+                {
+                    "ugly": "\\\\right\\\\rvert",
+                    "pretty": "|",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\left\\<",
+                    "pretty": "⟨",
+                    "style": {
+                        "color": "#e91e63"
                     },
-                    {
-                        "ugly": "\\\\right\\)",
-                        "pretty": ")",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\left\\[", 
-                        "pretty": "[",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\right\\]",
-                        "pretty": "]",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\left\\\\{", 
-                        "pretty": "{",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\right\\\\}",
-                        "pretty": "}",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\left\\|", 
-                        "pretty": "|",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\right\\|",
-                        "pretty": "|",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\left\\.",
-                        "pretty": "."
-                    },
-                    {
-                        "ugly": "\\\\right\\\\rvert",
-                        "pretty": "|",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\left\\<", 
-                        "pretty": "⟨",
-                        "style": {
-                            "color": "#e91e63"},
-                    },
-                    {
-                        "ugly": "\\\\right\\>",
-                        "pretty": "⟩",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    {
-                        "ugly": "\\\\Big\\(",
-                        "pretty": "(",
-                        "style": {
-                            "color": "#e91e63"}  
-                    },
-                    {
-                        "ugly": "\\\\Big\\)",
-                        "pretty": ")",
-                        "style": {
-                            "color": "#e91e63"}
-                    },
-                    // {
-                    //     "ugly": "\\\\Bigg\\(",
-                    //     "pretty": "(",
-                    //     "style": {
-                    //         "color": "#cc00ef"}
-                    // },
-                    // {
-                    //     "ugly": "\\\\Bigg\\)",
-                    //     "pretty": ")",
-                    //     "style": {
-                    //         "color": "#cc00ef"}
-                    // },
-                    {
-                        "ugly": "\\\\sqrt",
-                        "pretty": "√",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\\\\\\\",
-                        "pretty": "↩",
-                        "style": {
-                            "color": "#e91e63"
-                        }
-                    },
-                    
-
+                },
+                {
+                    "ugly": "\\\\right\\>",
+                    "pretty": "⟩",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\Big\\(",
+                    "pretty": "(",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                {
+                    "ugly": "\\\\Big\\)",
+                    "pretty": ")",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
+                // {
+                //     "ugly": "\\\\Bigg\\(",
+                //     "pretty": "(",
+                //     "style": {
+                //         "color": "#cc00ef"}
+                // },
+                // {
+                //     "ugly": "\\\\Bigg\\)",
+                //     "pretty": ")",
+                //     "style": {
+                //         "color": "#cc00ef"}
+                // },
+                {
+                    "ugly": "\\\\sqrt",
+                    "pretty": "√",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\\\\\\\",
+                    "pretty": "↩",
+                    "style": {
+                        "color": "#e91e63"
+                    }
+                },
                 // Bras and Kets
                 // {
                 //     "ugly": "\\\\bra{^([a-z])}",
                 //     "pretty": "test"
                 // }
-
-                
                 // Super and Subscripts 0-9
-                    {
-                        "ugly": "\\^\\{\\*\\}",
-                            "pretty": "*",
-                            "style": {
-                                "color": "#ff0074"}
-                    },
-                    {
-                        "ugly": "\\^\\{†\\}",
-                        "pretty": "†",
-                        "style": {
-                            "color": "#ff0074"}
-                    },
-                    {
-                        "ugly": "\\^1",
-                        "pretty": "¹",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{1\\}",
-                        "pretty": "¹",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^2",
-                        "pretty": "²",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{2\\}",
-                        "pretty": "²",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^3",
-                        "pretty": "³",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{3\\}",
-                        "pretty": "³",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^4",
-                        "pretty": "⁴",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{4\\}",
-                        "pretty": "⁴",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^5",
-                        "pretty": "⁵",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{5\\}",
-                        "pretty": "⁵",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^6",
-                        "pretty": "⁶",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{6\\}",
-                        "pretty": "⁶",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^7",
-                        "pretty": "⁷",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{7\\}",
-                        "pretty": "⁷",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^8",
-                        "pretty": "⁸",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{8\\}",
-                        "pretty": "⁸",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^9",
-                        "pretty": "⁹",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{9\\}",
-                        "pretty": "⁹",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-
-
-                    {
-                        "ugly": "\\_0",
-                        "pretty": "₀",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\_\\{0\\}",
-                        "pretty": "₀",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_1", 
-                        "pretty": "₁",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{1\\}", 
-                        "pretty": "₁",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{2\\}",
-                        "pretty": "₂",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_2",
-                        "pretty": "₂",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{3\\}",
-                        "pretty": "₃",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_3",
-                        "pretty": "₃",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_4", 
-                        "pretty": "₄",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{4\\}", 
-                        "pretty": "₄",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_5", 
-                        "pretty": "₅",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{5\\}", 
-                        "pretty": "₅",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_5", 
-                        "pretty": "₅",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{5\\}", 
-                        "pretty": "₅",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_6", 
-                        "pretty": "₆",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{6\\}", 
-                        "pretty": "₆",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_7", 
-                        "pretty": "₇",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{7\\}", 
-                        "pretty": "₇",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_8", 
-                        "pretty": "₈",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{8\\}", 
-                        "pretty": "₈",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_9", 
-                        "pretty": "₉",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{10\\}",
-                        "pretty": "₁₀",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{\\perp}\\}",
-                        "pretty": "⊥",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    // {
-                    //     "ugly": "_{-∞}",
-                    //     "pretty": "∞"
-                    // },
-                    // {
-                    //     "ugly": "^{∞}",
-                    //     "pretty": "∞"
-                    // },
-
+                {
+                    "ugly": "\\^\\{\\*\\}",
+                    "pretty": "*",
+                    "style": {
+                        "color": "#ff0074"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{†\\}",
+                    "pretty": "†",
+                    "style": {
+                        "color": "#ff0074"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{\\\\dagger\\}",
+                    "pretty": "†",
+                    "style": {
+                        "color": "#ff0074"
+                    }
+                },
+                {
+                    "ugly": "\\^\\\\dagger",
+                    "pretty": "†",
+                    "style": {
+                        "color": "#ff0074"
+                    }
+                },
+                {
+                    "ugly": "\\^1",
+                    "pretty": "¹",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{1\\}",
+                    "pretty": "¹",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^2",
+                    "pretty": "²",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{2\\}",
+                    "pretty": "²",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^3",
+                    "pretty": "³",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{3\\}",
+                    "pretty": "³",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^4",
+                    "pretty": "⁴",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{4\\}",
+                    "pretty": "⁴",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^5",
+                    "pretty": "⁵",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{5\\}",
+                    "pretty": "⁵",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^6",
+                    "pretty": "⁶",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{6\\}",
+                    "pretty": "⁶",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^7",
+                    "pretty": "⁷",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{7\\}",
+                    "pretty": "⁷",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^8",
+                    "pretty": "⁸",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{8\\}",
+                    "pretty": "⁸",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^9",
+                    "pretty": "⁹",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{9\\}",
+                    "pretty": "⁹",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\_0",
+                    "pretty": "₀",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\_\\{0\\}",
+                    "pretty": "₀",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_1",
+                    "pretty": "₁",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{1\\}",
+                    "pretty": "₁",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{2\\}",
+                    "pretty": "₂",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_2",
+                    "pretty": "₂",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{3\\}",
+                    "pretty": "₃",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_3",
+                    "pretty": "₃",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_4",
+                    "pretty": "₄",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{4\\}",
+                    "pretty": "₄",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_5",
+                    "pretty": "₅",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{5\\}",
+                    "pretty": "₅",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_5",
+                    "pretty": "₅",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{5\\}",
+                    "pretty": "₅",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_6",
+                    "pretty": "₆",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{6\\}",
+                    "pretty": "₆",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_7",
+                    "pretty": "₇",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{7\\}",
+                    "pretty": "₇",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_8",
+                    "pretty": "₈",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{8\\}",
+                    "pretty": "₈",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_9",
+                    "pretty": "₉",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{10\\}",
+                    "pretty": "₁₀",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{\\perp}\\}",
+                    "pretty": "⊥",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                // {
+                //     "ugly": "_{-∞}",
+                //     "pretty": "∞"
+                // },
+                // {
+                //     "ugly": "^{∞}",
+                //     "pretty": "∞"
+                // },
                 // Superscript letters
-                    {
-                        "ugly": "\\^a",
-                        "pretty": "ᵃ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{a\\}",
-                        "pretty": "ᵃ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^b",
-                        "pretty": "ᵇ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-
-                    {
-                        "ugly": "\\^\\{b\\}",
-                        "pretty": "ᵇ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^c",
-                        "pretty": "ᶜ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{c\\}",
-                        "pretty": "ᶜ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^d",
-                        "pretty": "ᵈ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{d\\}",
-                        "pretty": "ᵈ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^e",
-                        "pretty": "ᵉ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{e\\}",
-                        "pretty": "ᵉ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^f",
-                        "pretty": "ᶠ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{f\\}",
-                        "pretty": "ᶠ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^g",
-                        "pretty": "ᵍ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{g\\}",
-                        "pretty": "ᵍ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^h",
-                        "pretty": "ʰ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{h\\}",
-                        "pretty": "ʰ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^i",
-                        "pretty": "ⁱ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{i\\}",
-                        "pretty": "ⁱ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^j",
-                        "pretty": "ʲ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{j\\}",
-                        "pretty": "ʲ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^k",
-                        "pretty": "ᵏ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{k\\}",
-                        "pretty": "ᵏ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^l",
-                        "pretty": "ˡ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{l\\}",
-                        "pretty": "ˡ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^m",
-                        "pretty": "ᵐ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{m\\}",
-                        "pretty": "ᵐ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^n",
-                        "pretty": "ⁿ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{n\\}",
-                        "pretty": "ⁿ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^o",
-                        "pretty": "ᵒ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{o\\}",
-                        "pretty": "ᵒ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^p",
-                        "pretty": "ᵖ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{p\\}",
-                        "pretty": "ᵖ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^r",
-                        "pretty": "ʳ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{r\\}",
-                        "pretty": "ʳ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^s",
-                        "pretty": "ˢ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{s\\}",
-                        "pretty": "ˢ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^t",
-                        "pretty": "ᵗ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{t\\}",
-                        "pretty": "ᵗ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^u",
-                        "pretty": "ᵘ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{u\\}",
-                        "pretty": "ᵘ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^v",
-                        "pretty": "ᵛ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{v\\}",
-                        "pretty": "ᵛ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^w",
-                        "pretty": "ʷ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{w\\}",
-                        "pretty": "ʷ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^x",
-                        "pretty": "ˣ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{x\\}",
-                        "pretty": "ˣ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^y",
-                        "pretty": "ʸ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{y\\}",
-                        "pretty": "ʸ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^z",
-                        "pretty": "ᶻ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "\\^\\{z\\}",
-                        "pretty": "ᶻ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-    
-
-                    
-
+                {
+                    "ugly": "\\^a",
+                    "pretty": "ᵃ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{a\\}",
+                    "pretty": "ᵃ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^b",
+                    "pretty": "ᵇ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{b\\}",
+                    "pretty": "ᵇ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^c",
+                    "pretty": "ᶜ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{c\\}",
+                    "pretty": "ᶜ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^d",
+                    "pretty": "ᵈ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{d\\}",
+                    "pretty": "ᵈ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^e",
+                    "pretty": "ᵉ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{e\\}",
+                    "pretty": "ᵉ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^f",
+                    "pretty": "ᶠ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{f\\}",
+                    "pretty": "ᶠ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^g",
+                    "pretty": "ᵍ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{g\\}",
+                    "pretty": "ᵍ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^h",
+                    "pretty": "ʰ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{h\\}",
+                    "pretty": "ʰ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^i",
+                    "pretty": "ⁱ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{i\\}",
+                    "pretty": "ⁱ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^j",
+                    "pretty": "ʲ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{j\\}",
+                    "pretty": "ʲ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^k",
+                    "pretty": "ᵏ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{k\\}",
+                    "pretty": "ᵏ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^l",
+                    "pretty": "ˡ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{l\\}",
+                    "pretty": "ˡ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^m",
+                    "pretty": "ᵐ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{m\\}",
+                    "pretty": "ᵐ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^n",
+                    "pretty": "ⁿ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{n\\}",
+                    "pretty": "ⁿ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^o",
+                    "pretty": "ᵒ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{o\\}",
+                    "pretty": "ᵒ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^p",
+                    "pretty": "ᵖ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{p\\}",
+                    "pretty": "ᵖ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^r",
+                    "pretty": "ʳ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{r\\}",
+                    "pretty": "ʳ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^s",
+                    "pretty": "ˢ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{s\\}",
+                    "pretty": "ˢ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^t",
+                    "pretty": "ᵗ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{t\\}",
+                    "pretty": "ᵗ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^u",
+                    "pretty": "ᵘ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{u\\}",
+                    "pretty": "ᵘ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^v",
+                    "pretty": "ᵛ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{v\\}",
+                    "pretty": "ᵛ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^w",
+                    "pretty": "ʷ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{w\\}",
+                    "pretty": "ʷ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^x",
+                    "pretty": "ˣ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{x\\}",
+                    "pretty": "ˣ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^y",
+                    "pretty": "ʸ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{y\\}",
+                    "pretty": "ʸ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^z",
+                    "pretty": "ᶻ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\^\\{z\\}",
+                    "pretty": "ᶻ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
                 // Subscripts letters 
-
-                    {
-                        "ugly": "_a",
-                        "pretty": "ₐ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{a\\}",
-                        "pretty": "ₐ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },                    
-                    {
-                        "ugly": "_e",
-                        "pretty": "ₑ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{e\\}",
-                        "pretty": "ₑ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_h",
-                        "pretty": "ₕ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{h\\}",
-                        "pretty": "ₕ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_i",
-                        "pretty": "ᵢ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{i\\}",
-                        "pretty": "ᵢ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_j",
-                        "pretty": "ⱼ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{j\\}",
-                        "pretty": "ⱼ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_k",
-                        "pretty": "ₖ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{k\\}",
-                        "pretty": "ₖ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    
-                    {
-                        "ugly": "\\\\mathrm{d}",
-                        "pretty": "d",
-                        "style": {
-                            "color": "#ff0074"}
-                    },
-
-                    {
-                        "ugly": "_l",
-                        "pretty": "ₗ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{l\\}",
-                        "pretty": "ₗ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_m",
-                        "pretty": "ₘ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{m\\}",
-                        "pretty": "ₘ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_n",
-                        "pretty": "ₙ",
-                        "post": "\\b|_",
-                        "style": {
-                            "color": "#2DCDDF"}  
-                    },
-                    {
-                        "ugly": "_\\{n\\}",
-                        "pretty": "ₙ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_o",
-                        "pretty": "ₒ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{o\\}",
-                        "pretty": "ₒ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_p",
-                        "pretty": "ₚ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{p\\}",
-                        "pretty": "ₚ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_r",
-                        "pretty": "ᵣ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{r\\}",
-                        "pretty": "ᵣ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_s",
-                        "pretty": "ₛ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{s\\}",
-                        "pretty": "ₛ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_t",
-                        "pretty": "ₜ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{t\\}",
-                        "pretty": "ₜ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_u",
-                        "pretty": "ᵤ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{u\\}",
-                        "pretty": "ᵤ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_v",
-                        "pretty": "ᵥ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{v\\}",
-                        "pretty": "ᵥ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_w",
-                        "pretty": "w",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{w\\}",
-                        "pretty": "w",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    
-                    {
-                        "ugly": "_x",
-                        "pretty": "ₓ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },
-                    {
-                        "ugly": "_\\{x\\}",
-                        "pretty": "ₓ",
-                        "style": {
-                            "color": "#2DCDDF"}
-                    },    
-                           
-                    
+                {
+                    "ugly": "_a",
+                    "pretty": "ₐ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{a\\}",
+                    "pretty": "ₐ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_e",
+                    "pretty": "ₑ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{e\\}",
+                    "pretty": "ₑ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_h",
+                    "pretty": "ₕ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{h\\}",
+                    "pretty": "ₕ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_i",
+                    "pretty": "ᵢ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{i\\}",
+                    "pretty": "ᵢ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_j",
+                    "pretty": "ⱼ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{j\\}",
+                    "pretty": "ⱼ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_k",
+                    "pretty": "ₖ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{k\\}",
+                    "pretty": "ₖ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "\\\\mathrm{d}",
+                    "pretty": "d",
+                    "style": {
+                        "color": "#ff0074"
+                    }
+                },
+                {
+                    "ugly": "_l",
+                    "pretty": "ₗ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{l\\}",
+                    "pretty": "ₗ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_m",
+                    "pretty": "ₘ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{m\\}",
+                    "pretty": "ₘ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_n",
+                    "pretty": "ₙ",
+                    "post": "\\b|_",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{n\\}",
+                    "pretty": "ₙ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_o",
+                    "pretty": "ₒ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{o\\}",
+                    "pretty": "ₒ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_p",
+                    "pretty": "ₚ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{p\\}",
+                    "pretty": "ₚ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_r",
+                    "pretty": "ᵣ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{r\\}",
+                    "pretty": "ᵣ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_s",
+                    "pretty": "ₛ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{s\\}",
+                    "pretty": "ₛ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_t",
+                    "pretty": "ₜ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{t\\}",
+                    "pretty": "ₜ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_u",
+                    "pretty": "ᵤ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{u\\}",
+                    "pretty": "ᵤ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_v",
+                    "pretty": "ᵥ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{v\\}",
+                    "pretty": "ᵥ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_w",
+                    "pretty": "w",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{w\\}",
+                    "pretty": "w",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_x",
+                    "pretty": "ₓ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
+                {
+                    "ugly": "_\\{x\\}",
+                    "pretty": "ₓ",
+                    "style": {
+                        "color": "#2DCDDF"
+                    }
+                },
                 {
                     "ugly": "\\^∘",
                     "pretty": "°",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\$",
@@ -1496,14 +1621,15 @@
                 {
                     "ugly": "\\\\end\\{equation\\}",
                     "pretty": "⮝"
-                },                    {
+                },
+                {
                     "ugly": "\\\\begin\\{equation*\\}",
                     "pretty": "⮟*"
                 },
                 {
                     "ugly": "\\\\end\\{equation*\\}",
                     "pretty": "⮝*"
-                },              
+                },
                 {
                     "ugly": "\\\\begin\\{align\\}",
                     "pretty": "⮟"
@@ -1511,7 +1637,8 @@
                 {
                     "ugly": "\\\\end\\{align\\}",
                     "pretty": "⮝"
-                },{
+                },
+                {
                     "ugly": "\\\\begin\\{align*\\}",
                     "pretty": "⮟*"
                 },
@@ -1598,7 +1725,8 @@
                     "ugly": "\\\\ ",
                     "pretty": "␣",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\forall",
@@ -2208,11 +2336,10 @@
     ],
     "latex-workshop.latex.clean.subfolder.enabled": true,
     "editor.scrollbar.verticalScrollbarSize": 0,
-    "github.copilot.advanced": {
-    
-    },
+    "github.copilot.advanced": {},
     "cSpell.userWords": [
         "antiquark",
+        "antisymmetrizer",
         "Cabibbo",
         "Clebsch",
         "eigenfunctions",
@@ -2230,6 +2357,7 @@
         "Macrostate",
         "matplotlib",
         "Oblig",
+        "ønsker",
         "orthonormality",
         "pyplot",
         "savefig",
@@ -2263,12 +2391,10 @@
         "interval": 0
     },
     "background.enabled": false,
-    "latex-workshop.view.pdf.trim": 3,
-    "latex-workshop.view.pdf.zoom": "page-width",
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "latex-workshop.view.pdf.trim": 20,
+    "latex-workshop.view.pdf.zoom": "page-width,0",
+    "terminal.integrated.fontFamily": " MesloLGS Nerd Font mono, Symbols Nerd Font Mono",
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "latex-workshop.latex.watch.pdf.delay": 2000,
-    "workbench.editor.editorActionsLocation": "hidden",
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
     "editor.cursorSmoothCaretAnimation": "on",
@@ -2300,9 +2426,8 @@
     ],
     "latex-workshop.message.warning.show": false,
     "latex-workshop.message.error.show": false,
-    "editor.stickyScroll.enabled": true,
     "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
-    "latex-utilities.liveReformat.snippets": [    
+    "latex-utilities.liveReformat.snippets": [
         {
             "prefix": "([A-Za-z}\\)\\]])(\\d)$",
             "body": "$1_$2",
@@ -2808,22 +2933,35 @@
     "workbench.colorTheme": "monokai-best",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
     "latex-workshop.latex.autoClean.run": "onSucceeded",
-    "latex-workshop.latex.outDir": "%DIR%/out",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "files.autoSave": "afterDelay",
     "zenMode.restore": false,
     "editor.minimap.enabled": false,
-    "github.copilot.editor.enableAutoCompletions": false,
     "editor.wordWrapColumn": 1000,
-    "latex-workshop.latex.watch.delay": 500,
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "expand",
     "zenMode.showTabs": "none",
-    "zenMode.hideStatusBar": false,
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
-        "markdown": false,
+        "markdown": true,
         "scminput": false
     },
+    "zenMode.fullScreen": false,
+    "zenMode.centerLayout": false,
+    "window.zoomLevel": 1,
+    "terminal.integrated.gpuAcceleration": "on",
+    "latex-workshop.latex.autoBuild.interval": 10000,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "markdown.extension.tableFormatter.delimiterRowNoPadding": true,
+    "latex-workshop.formatting.latex": "tex-fmt",
+    "latex-workshop.formatting.tex-fmt.args": [
+        "--keep",
+        "--tab",
+        "4"
+    ],
+    "editor.formatOnSave": true,
+    "umath.preview.enableMathPreview": false,
 }
