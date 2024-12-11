@@ -94,11 +94,6 @@
     },
     {
         "key": "shift+enter",
-        "command": "-jupyter.execSelectionInteractive",
-        "when": "editorTextFocus && isWorkspaceTrusted && jupyter.ownsSelection && !findInputFocussed && !jupyter.webExtension && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
-        "key": "shift+enter",
         "command": "notebook.cell.execute",
         "when": "notebookCellListFocused && notebookCellType == 'markup' || notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0"
     },
@@ -514,5 +509,55 @@
         "key": "ctrl+k v",
         "command": "-markdown.showPreviewToSide",
         "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+[Minus]",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalProcessSupported && terminalFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalProcessSupported && terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "inlineChat.start",
+        "when": "inlineChatHasProvider && inlineChatPossible && !editorReadonly"
+    },
+    {
+        "key": "ctrl+g ctrl+s",
+        "command": "git.sync",
+        "when": "!operationInProgress"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "notebook.cell.cancelExecution",
+        "when": "notebookCellExecutionState == 'executing' || notebookCellExecutionState == 'pending'"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "workbench.action.navigateBackInNavigationLocations"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "workbench.action.navigateForwardInNavigationLocations"
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "editor.action.indentLines"
     }
 ]

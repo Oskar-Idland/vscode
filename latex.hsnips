@@ -1021,7 +1021,7 @@ endsnippet
 # == Auto Environment ==
 
 # ==== Auto Math Mode ====
-snippet im "inline Math" wA
+snippet IM "inline Math" wA
 $${1}$$0
 endsnippet
 snippet dm "Display Math" wA
@@ -1603,7 +1603,7 @@ endsnippet
 snippet bfig "figure" wA
 \\begin{figure}[${1:h!}]
 \\centering
-\\includegraphics[width = \\textwidth]{$2}
+\\includegraphics[width = 0.45\\textwidth]{$2}
 \\caption{${3:Caption}}
 \\label{fig: $4}
 \\end{figure}$5

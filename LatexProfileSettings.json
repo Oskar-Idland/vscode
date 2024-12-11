@@ -2352,6 +2352,7 @@
         "groundstate",
         "Higgs",
         "holonomic",
+        "ipynb",
         "Kets",
         "lightbulbs",
         "Macrostate",
@@ -2932,7 +2933,6 @@
     "latex-workshop.view.pdf.invertMode.grayscale": 0,
     "workbench.colorTheme": "monokai-best",
     "editor.suggest.snippetsPreventQuickSuggestions": true,
-    "latex-workshop.latex.autoClean.run": "onSucceeded",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "files.autoSave": "afterDelay",
     "zenMode.restore": false,
@@ -2964,4 +2964,11 @@
     ],
     "editor.formatOnSave": true,
     "umath.preview.enableMathPreview": false,
+    "editor.scrollbar.horizontalScrollbarSize": 0,
+    "latex-workshop.latex.outDir": "%DIR%/out",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "git.mergeEditor": true,
+    "cSpell.mergeCSpellSettingsFields": {
+        "useGitignore": false
+    },
 }

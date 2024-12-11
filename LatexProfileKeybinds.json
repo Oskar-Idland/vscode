@@ -320,5 +320,10 @@
     {
         "key": "alt+p",
         "command": "umath.preview.toggleMathPreview"
+    },
+    {
+        "key": "ctrl+g ctrl+s",
+        "command": "git.sync",
+        "when": "!operationInProgress"
     }
 ]
