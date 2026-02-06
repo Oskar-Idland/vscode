@@ -12,10 +12,9 @@
         "editor.semanticHighlighting.enabled": true
     },
     "code-runner.executorMap": {
-
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
-        "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+        "c": "cd $dir && gcc $fileName -lm -fopenmp -g -Wall -o $fileNameWithoutExt && ./$fileNameWithoutExt",
         "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "zig": "zig run",
         "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
@@ -104,10 +103,12 @@
     },
     "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": true,
-        "scminput": false
+        "scminput": false,
+        "c": true,
+        "ignore": true
     },
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
     "editor.wordWrap": "on",
@@ -127,7 +128,6 @@
         "editorBracketHighlight.unexpectedBracket.foreground": "#ff0008",
     },
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontWeight": 500,
     "code-runner.showRunCommandInEditorContextMenu": false,
     "code-runner.runInTerminal": true,
     "vsicons.dontShowNewVersionMessage": true,
@@ -203,4 +203,50 @@
     "C_Cpp.doxygen.generatedStyle": "/**",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "window.zoomLevel": 2,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorStyle": "block",
+    "errorLens.codeLensTemplate": "$severity $message $count $source $code",
+  "errorLens.delay": 500,
+  "errorLens.delayMode": "debounce",
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.excludeBySource": [
+    "cSpell"
+  ],
+  "errorLens.severityText": [
+      "▣",
+      "◈",
+      "◉",
+      "⛆",
+  ],
+  "errorLens.replace": [
+      {
+        "matcher": "Missing return type on",
+        "message": "(。_。)",
+      },
+      {
+        "matcher": "Expected an identifier",
+        "message": "(。_。) Type??",
+      },
+      {
+        "matcher": "(.*) is not defined",
+        "message": "$1? (ఠ ͟ಠ)"
+      },
+      {
+        "matcher": "Identifier (.*) is undefined",
+        "message": "$1? (ఠ ͟ಠ)"
+      }
+  ],
+"errorLens.ignoreUntitled": false,
+"github.copilot.advanced": {
+    "authProvider": "github"
+},
+"terminal.integrated.fontLigatures.enabled": true,
+"editor.fontWeight": 500,
+"cSpell.language": "en,no",
+"cSpell.enabled": false,
+"errorLens.enabled": true,
+"vscode-modernized.autoApplyTheme": false,
+"github.copilot.nextEditSuggestions.enabled": true
 }

@@ -19,12 +19,6 @@
     },
     
     {
-        "key": "alt+right",
-        "command": "cursorWordPartRight",
-        "when": "editorTextFocus",
-    },
-    
-    {
         "key": "ctrl+k",
         "command": "extension.multiCommand.execute",
         "args": {
@@ -118,7 +112,7 @@
         "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
     },
     {
-        "key": "shift+tab",
+        "key": "alt+tab",
         "command": "editor.action.inlineSuggest.commit",
         "when": "inlineSuggestionVisible"
     },
@@ -140,7 +134,7 @@
         "when": "!config.latex-workshop.bind.altKeymap.enabled && !virtualWorkspace && editorLangId =~ /^latex$|^latex-expl3$|^rsweave$|^jlweave$|^pweave$/"
     },
     {
-        "key": "ctrl+pagedown",
+        "key": "ctrl+alt+right",
         "command": "workbench.action.nextEditor",
         "when": "editorFocus"
     },
@@ -177,7 +171,7 @@
         "when": "isDevelopment"
     },
     {
-        "key": "shift+tab",
+        "key": "ctrl+alt+enter",
         "command": "editor.action.inlineSuggest.commit",
         "when": "inlineSuggestionVisible && tabnine.tab-override && !editorTabMovesFocus"
     },
@@ -239,7 +233,8 @@
     },
     {
         "key": "ctrl+shift+c",
-        "command": "editor.action.toggleColumnSelection"
+        "command": "editor.action.toggleColumnSelection",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+j",
@@ -329,7 +324,8 @@
     },
     {
         "key": "ctrl+shift+[Minus]",
-        "command": "workbench.action.zoomIn"
+        "command": "workbench.action.zoomIn",
+        "when": "editorFocus || terminalFocus"
     },
     {
         "key": "ctrl+numpad_add",
@@ -516,11 +512,6 @@
         "when": "terminalProcessSupported && terminalFocus"
     },
     {
-        "key": "ctrl+-",
-        "command": "workbench.action.terminal.fontZoomOut",
-        "when": "terminalProcessSupported && terminalFocus"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "inlineChat.start",
         "when": "inlineChatHasProvider && inlineChatPossible && !editorReadonly"
@@ -534,10 +525,6 @@
         "key": "shift+enter",
         "command": "-python.execSelectionInTerminal",
         "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
-    },
-    {
-        "key": "ctrl+e",
-        "command": "workbench.files.action.focusFilesExplorer"
     },
     {
         "key": "ctrl+shift+c",
@@ -559,5 +546,211 @@
     {
         "key": "ctrl+tab",
         "command": "editor.action.indentLines"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+[Minus]",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "notebook.cell.changeLanguage",
+        "when": "notebookCellEditable && notebookEditable && notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-notebook.cell.changeLanguage",
+        "when": "notebookCellEditable && notebookEditable && notebookEditorFocused"
+    },
+    {
+        "key": "escape",
+        "command": "notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !inlineChatFocused"
+    },
+    {
+        "key": "escape",
+        "command": "-notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible && !inlineChatFocused"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+[Minus]",
+        "command": "responsiveFonts.fontZoomIn",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "-responsiveFonts.fontZoomIn",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "terminalAllInOne.decreaseFontSize",
+        "when": "!config.terminalAllInOne.disableAllKeybindings && terminalFocus"
+    },
+    {
+        "key": "ctrl+i -",
+        "command": "-terminalAllInOne.decreaseFontSize",
+        "when": "!config.terminalAllInOne.disableAllKeybindings"
+    },
+    {
+        "key": "ctrl+[Equal]",
+        "command": "terminalAllInOne.increaseFontSize",
+        "when": "!config.terminalAllInOne.disableAllKeybindings"
+    },
+    {
+        "key": "ctrl+i shift+0",
+        "command": "-terminalAllInOne.increaseFontSize",
+        "when": "!config.terminalAllInOne.disableAllKeybindings"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-notebook.cell.split",
+        "when": "editorTextFocus && inputFocus && notebookEditorFocused && !notebookOutputInputFocused"
+    },
+    {
+        "key": "ctrl+shift+[Minus]",
+        "command": "-workbench.action.chat.attachTools",
+        "when": "inChatInput && chatMode == 'agent'"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+alt+r",
+        "command": "jupyter.restartkernel",
+        "when": "isWorkspaceTrusted && jupyter.interactive.canRestartNotebookKernel || isWorkspaceTrusted && jupyter.notebookeditor.canrestartNotebookkernel && notebookKernel =~ /^ms-toolsai.jupyter\\//"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "editor.emmet.action.incrementNumberByOne"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "editor.emmet.action.decrementNumberByOne"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-editor.action.clipboardPasteAction"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "editor.action.pasteAsText"
+    },
+    {
+        "key": "insert",
+        "command": "-editor.action.toggleOvertypeInsertMode"
+    },
+    {
+        "key": "alt+insert",
+        "command": "editor.action.toggleOvertypeInsertMode"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.selectHighlights",
+        "when": "findInputFocussed"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "ctrl+alt+t",
+        "command": "workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+p ctrl+o",
+        "command": "workbench.action.gotoSymbol",
+        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "-workbench.action.gotoSymbol",
+        "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+    },
+    {
+        "key": "ctrl+t ctrl+c",
+        "command": "editor.action.transformToCamelcase"
+    },
+    {
+        "key": "ctrl+t ctrl+k",
+        "command": "editor.action.transformToKebabcase"
+    },
+    {
+        "key": "ctrl+t ctrl+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+t ctrl+p",
+        "command": "editor.action.transformToPascalcase"
+    },
+    {
+        "key": "ctrl+t ctrl+s",
+        "command": "editor.action.transformToSnakecase"
+    },
+    {
+        "key": "ctrl+t ctrl+t",
+        "command": "editor.action.transformToTitlecase"
+    },
+    {
+        "key": "ctrl+t ctrl+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "inlineChat.start",
+        "when": "inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || inlineChatHasNotebookAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || inlineChatHasNotebookInline && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook'"
     }
 ]

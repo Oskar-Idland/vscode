@@ -72,7 +72,8 @@
     },
     {
         "key": "ctrl+shift+c",
-        "command": "editor.action.toggleColumnSelection"
+        "command": "editor.action.toggleColumnSelection",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+shift+l",
@@ -85,7 +86,7 @@
         "when": "!notebookEditorFocused"
     },
     {
-        "key": "shift+tab",
+        "key": "ctrl+alt+enter",
         "command": "editor.action.inlineSuggest.commit",
         "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus && !suggestWidgetVisible"
     },
@@ -192,7 +193,7 @@
         "when": "config.latex-utilities.formattedPaste.useAsDefault && editorTextFocus && editorLangId == 'latex'"
     },
     {
-        "key": "ctrl+alt+up",
+        "key": "alt+up",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -202,7 +203,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+alt+down",
+        "key": "alt+down",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -325,5 +326,13 @@
         "key": "ctrl+g ctrl+s",
         "command": "git.sync",
         "when": "!operationInProgress"
+    },
+    {
+        "key": "ctrl+insert",
+        "command": "editor.action.toggleOvertypeInsertMode"
+    },
+    {
+        "key": "insert",
+        "command": "-editor.action.toggleOvertypeInsertMode"
     }
 ]

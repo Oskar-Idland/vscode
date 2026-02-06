@@ -26,7 +26,7 @@
         "[monokai-best]": {
             "editorGroup.border": "#0000",
             "statusBar.background": "#0000",
-            "statusBarItem.remoteBackground": "#0000",
+            "statusBarItem.remoteBackground": "#0000"
         },
     },
     "editor.fontFamily": "FiraCode Nerd Font Mono , Julia Mono Bold",
@@ -43,17 +43,52 @@
     ],
     "latex-workshop.latex.tools": [
         {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=batchmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                // "-draftmode",
+                "%DOC%"
+            ],
+        },
+        {
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-                "-interaction=nonstopmode",
+                "-interaction=batchmode",
                 "-synctex=1",
                 "-file-line-error",
-                // "-xelatex",
+                "-output-driver=xdvipdfmx -z3",
                 "-output-directory=%OUTDIR%",
                 "%DOCFILE_EXT%"
             ],
             // "env": {"TEXMFHOME": "/usr/bin/xelatex"}
+        },
+        {
+            "name": "xelatex-fast",
+            "command": "xelatex",
+            "args": [
+                "-interaction=batchmode",
+                // "-synctex=1",
+                "-file-line-error",
+                "-draftmode",
+                "-no-pdf",
+                "-output-driver=xdvipdfmx -z0",
+                "-output-directory=%OUTDIR%",
+                "%DOCFILE_EXT%"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {}
         },
         {
             "name": "pdflatexDirs",
@@ -162,10 +197,35 @@
         //     "env": {}
         // }
     ],
+    // "latex-workshop.formatting.latex": "latexindent",
     "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatexmk",
+            "tools": [
+                "xelatexmk"
+            ]
+        },
         {
             "name": "xelatex",
             "tools": [
+                "xelatex",
+            ]
+        },
+        {
+            "name": "fast: xelatex -> biber -> xelatex * 2",
+            "tools": [
+                "xelatex-fast",
+                "biber",
+                "xelatex-fast",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex -> biber -> xelatex * 2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
                 "xelatex"
             ]
         },
@@ -2347,6 +2407,7 @@
         "eigenkets",
         "eigenstate",
         "eigenstates",
+        "ejectile",
         "Equipartition",
         "Gordan",
         "groundstate",
@@ -2392,9 +2453,8 @@
         "interval": 0
     },
     "background.enabled": false,
-    "latex-workshop.view.pdf.trim": 20,
-    "latex-workshop.view.pdf.zoom": "page-width,0",
-    "terminal.integrated.fontFamily": " MesloLGS Nerd Font mono, Symbols Nerd Font Mono",
+    "latex-workshop.view.pdf.zoom": "page-width,15%",
+    "terminal.integrated.fontFamily": " FiraCode Nerd Font Mono",
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
@@ -2406,8 +2466,6 @@
     "explorer.confirmPasteNative": false,
     "explorer.confirmDragAndDrop": false,
     "latex-workshop.latex.clean.fileTypes": [
-        "%DOCFILE%.bbl",
-        "%DOCFILE%.blg",
         "%DOCFILE%.idx",
         "%DOCFILE%.ind",
         "%DOCFILE%.lof",
@@ -2427,7 +2485,8 @@
     ],
     "latex-workshop.message.warning.show": false,
     "latex-workshop.message.error.show": false,
-    "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
+    // "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
+    "latex-utilities.formattedPaste.image.template": "\\includegraphics[width = $1\\textwidth]{${imageFilePath}}",
     "latex-utilities.liveReformat.snippets": [
         {
             "prefix": "([A-Za-z}\\)\\]])(\\d)$",
@@ -2945,7 +3004,8 @@
         "*": true,
         "plaintext": false,
         "markdown": true,
-        "scminput": false
+        "scminput": false,
+        "latex": true
     },
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
@@ -2963,7 +3023,6 @@
         "4"
     ],
     "editor.formatOnSave": true,
-    "umath.preview.enableMathPreview": false,
     "editor.scrollbar.horizontalScrollbarSize": 0,
     "latex-workshop.latex.outDir": "%DIR%/out",
     "latex-workshop.latex.recipe.default": "lastUsed",
@@ -2971,4 +3030,11 @@
     "cSpell.mergeCSpellSettingsFields": {
         "useGitignore": false
     },
+    "latex-workshop.bibtex-format.surround": "Quotation marks",
+    "tabnine.experimentalAutoImports": true,
+    "umath.preview.EnableCursor": false,
+    "zenMode.hideStatusBar": false,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "files.autoSaveDelay": 5000,
 }
