@@ -582,7 +582,7 @@ snippet `(?<!\\)(sin|cos|arccot|cot|csc|ln|exp|det|perp|arcsin|arccos|arctan|arc
 endsnippet
 
 
-snippet alpha "alpha" iAm
+snippet `(?<!\\)(alpha)` "alpha" iAm
 α
 endsnippet
 
@@ -590,7 +590,7 @@ snippet øa "alpha" iAm
 α
 endsnippet
 
-snippet beta "beta" iAm
+snippet `(?<!\\)(beta)` "beta" iAm
 β
 endsnippet
 
@@ -598,7 +598,7 @@ snippet øb "beta" iAm
 β
 endsnippet
 
-snippet gamma "gamma" iAm
+snippet `(?<!\\)(gamma)` "gamma" iAm
 γ
 endsnippet
 
@@ -606,11 +606,11 @@ snippet øg "gamma" iAm
 γ
 endsnippet
 
-snippet Gamma "Gama" iAm
+snippet `(?<!\\)(Gamma)` "Gamma" iAm
 Γ
 endsnippet
 
-snippet øG "Gama" iAm
+snippet øG "Gamma" iAm
 Γ
 endsnippet
 
@@ -618,7 +618,7 @@ snippet ød "delta" iAm
 δ
 endsnippet
 
-snippet delta "delta" iAm
+snippet `(?<!\\)(delta)` "delta" iAm
 δ
 endsnippet
 
@@ -626,7 +626,7 @@ snippet øD "Delta" iAm
 Δ
 endsnippet
 
-snippet Delta "Delta" iAm
+snippet `(?<!\\)(Delta)` "Delta" iAm
 Δ
 endsnippet
 
@@ -638,7 +638,7 @@ snippet vøe "varepsilon" iAm
 ε
 endsnippet
 
-snippet eps "epsilon" iAm
+snippet `(?<!\\)(eps)` "epsilon" iAm
 ϵ
 endsnippet
 priority 100
@@ -650,7 +650,7 @@ snippet øz "zeta" iAm
 ζ
 endsnippet
 
-snippet zeta "zeta" iAm
+snippet `(?<!\\)(zeta)` "zeta" iAm
 ζ
 endsnippet
 
@@ -658,7 +658,7 @@ snippet øt "theta" iAm
 θ
 endsnippet
 
-snippet theta "theta" iAm
+snippet `(?<!\\)(theta)` "theta" iAm
 θ
 endsnippet
 
@@ -666,7 +666,7 @@ snippet øe "eta" iAm
 η
 endsnippet
 
-snippet eta "eta" iAm
+snippet `(?<!\\)(eta)` "eta" iAm
 η
 endsnippet
 
@@ -674,7 +674,7 @@ snippet øT "Theta" iAm
 Θ
 endsnippet
 
-snippet Theta "Theta" iAm
+snippet `(?<!\\)(Theta)` "Theta" iAm
 Θ
 endsnippet
 
@@ -682,7 +682,7 @@ snippet øi "iota" iAm
 ι
 endsnippet
 
-snippet iota "iota" iAm
+snippet `(?<!\\)(iota)` "iota" iAm
 ι
 endsnippet
 
@@ -690,7 +690,7 @@ snippet øk "kappa" iAm
 κ
 endsnippet
 
-snippet kappa "kappa" iAm
+snippet `(?<!\\)(kappa)` "kappa" iAm
 κ
 endsnippet
 
@@ -698,7 +698,7 @@ snippet øl "labda" iAm
 λ
 endsnippet
 
-snippet lam "labda" iAm
+snippet `(?<!\\)(lam)` "labda" iAm
 λ
 endsnippet
 
@@ -706,7 +706,7 @@ snippet øL "Labda" iAm
 Λ
 endsnippet
 
-snippet Lam "Labda" iAm
+snippet `(?<!\\)(Lam)` "Labda" iAm
 Λ
 endsnippet
 
@@ -714,7 +714,7 @@ snippet øm "mu" iAm
 μ
 endsnippet
 
-snippet mu "mu" iAm
+snippet `(?<!\\)(mu)` "mu" iAm
 μ
 endsnippet
 
@@ -722,7 +722,7 @@ snippet øn "nu" iAm
 ν
 endsnippet
 
-snippet nu "nu" iAm
+snippet `(?<!\\)(nu)` "nu" iAm
 ν
 endsnippet
 
@@ -746,7 +746,7 @@ snippet øp "pi" iAm
 π
 endsnippet
 
-snippet pi "pi" iAm
+snippet `(?<!\\)(pi)` "pi" iAm
 π
 endsnippet
 
@@ -754,7 +754,7 @@ snippet øP "Pi" iAm
 Π
 endsnippet
 
-snippet Pi "Pi" iAm
+snippet `(?<!\\)(Pi)` "Pi" iAm
 Π
 endsnippet
 
@@ -762,7 +762,7 @@ snippet ør "rho" iAm
 ρ
 endsnippet
 
-snippet rho "rho" iAm
+snippet `(?<!\\)(rho)` "rho" iAm
 ρ
 endsnippet
 
@@ -770,7 +770,7 @@ snippet øs "sigma" iAm
 σ
 endsnippet
 
-snippet sigma "sigma" iAm
+snippet `(?<!\\)(sigma)` "sigma" iAm
 σ
 endsnippet
 
@@ -778,7 +778,7 @@ snippet øS "Sigma" iAm
 Σ
 endsnippet
 
-snippet Sigma "Sigma" iAm
+snippet `(?<!\\)(Sigma)` "Sigma" iAm
 Σ
 endsnippet
 
@@ -786,7 +786,7 @@ snippet øt "tau" iAm # Kræsjer med theta
 τ
 endsnippet
 
-snippet tau "tau" iAm
+snippet `(?<!\\)(tau)` "tau" iAm
 τ
 endsnippet
 
@@ -794,7 +794,7 @@ snippet øu "upsilon" iAm
 υ
 endsnippet
 
-snippet upsilon "upsilon" iAm
+snippet `(?<!\\)(upsilon)` "upsilon" iAm
 υ
 endsnippet
 
@@ -807,7 +807,7 @@ snippet vøf "varphi" iAm
 φ
 endsnippet
 
-snippet phi "phi" iAm
+snippet `(?<!\\)(phi)` "phi" iAm
 ϕ
 endsnippet
 
@@ -815,7 +815,7 @@ snippet øF "Phi" iAm
 Φ
 endsnippet
 
-snippet Phi "Phi" iAm
+snippet `(?<!\\)(Phi)` "Phi" iAm
 Φ
 endsnippet
 
@@ -823,7 +823,7 @@ snippet øc "chi" iAm
 χ
 endsnippet
 
-snippet chi "chi" iAm
+snippet `(?<!\\)(chi)` "chi" iAm
 χ
 endsnippet
 
@@ -831,7 +831,7 @@ snippet øy "psi" iAm
 ψ
 endsnippet
 
-snippet psi "psi" iAm
+snippet `(?<!\\)(psi)` "psi" iAm
 ψ
 endsnippet
 
@@ -839,7 +839,7 @@ snippet øY "Psi" iAm
 Ψ
 endsnippet
 
-snippet Psi "Psi" iAm
+snippet `(?<!\\)(Psi)` "Psi" iAm
 Ψ
 endsnippet
 
@@ -847,7 +847,7 @@ snippet øw "omega" iAm
 ω
 endsnippet
 
-snippet omega "omega" iAm
+snippet `(?<!\\)(omega)` "omega" iAm
 ω
 endsnippet
 
@@ -855,7 +855,7 @@ snippet øW "Omega" iAm
 Ω
 endsnippet
 
-snippet Omega "Omega" iAm
+snippet `(?<!\\)(Omega)` "Omega" iAm
 Ω
 endsnippet
 
@@ -1017,11 +1017,15 @@ snippet << "<<" iAm
 ≪
 endsnippet
 
+snippet prop "proportional" iAm
+∝
+endsnippet
+
 
 # == Auto Environment ==
 
 # ==== Auto Math Mode ====
-snippet IM "inline Math" wA
+snippet lk "inline Math" wA
 $${1}$$0
 endsnippet
 snippet dm "Display Math" wA
@@ -1030,7 +1034,7 @@ ${0}
 \]
 endsnippet
 snippet eqt "equation" wA
-\begin{equation}\label{eq: ${1}}
+\begin{equation}
   ${0}
 \end{equation}
 endsnippet
@@ -1089,7 +1093,7 @@ snippet lbra "left[ right]" Aim
 endsnippet
 
 priority 100
-snippet lang "leftangle rightangle" iAm
+snippet lang "left⟨ right⟩" iAm 
 \left<${1:${VISUAL}}\right>$0
 endsnippet
 
@@ -1166,6 +1170,14 @@ endsnippet
 snippet cancel "cancel" iAm
 \cancel{${1:${VISUAL}}}$0
 endsnippet
+
+snippet rea "Reaction" iAm
+\ce{${1:${VISUAL}} -> $2}$0
+endsnippet
+
+snippet iso "Isotope" iAm
+\ce{^{$1}$2}$0
+endsnippet
  
  # == Snippet ==
  
@@ -1208,6 +1220,12 @@ snippet beg "begin{} / end{}" bA
 \\begin{$1}
   ${0:${VISUAL}}
 \\end{$1}
+endsnippet
+
+snippet bframe "frame" iA
+\begin{frame}{$1}
+  $0
+\end{frame}
 endsnippet
 
 # snippet bsum "sum" iAm
@@ -1561,32 +1579,32 @@ endsnippet
 
  === Sections ===
  
-snippet sec "Section" w
+snippet Sec "Section" w
 \\section*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet Sec "Section with index" w
+snippet sec "Section with index" w
 \\section{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet ssec "Subsection" w
+snippet Ssec "Subsection" w
 \\subsection*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet Ssec "Subsection with index" w
+snippet ssec "Subsection with index" w
 \\subsection{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet sssec "Subsubsection" w
+snippet Sssec "Subsubsection" w
 \\subsubsection*{${1:${VISUAL}}}
 $0
 endsnippet
 
-snippet Sssec "Subsubsection with index" w
+snippet sssec "Subsubsection with index" w
 \\subsubsection{${1:${VISUAL}}}
 $0
 endsnippet
