@@ -154,7 +154,7 @@
     {
         "key": "ctrl+shift+l",
         "command": "workbench.action.editor.changeLanguageMode",
-        "when": "!notebookEditorFocused"
+        "when": "!notebookEditorFocused && !inputFocus"
     },
     {
         "key": "ctrl+k m",
@@ -570,7 +570,7 @@
     {
         "key": "ctrl+shift+l",
         "command": "notebook.cell.changeLanguage",
-        "when": "notebookCellEditable && notebookEditable && notebookEditorFocused"
+        "when": "notebookCellEditable && notebookEditable && notebookEditorFocused && notebookCellEditorFocused"
     },
     {
         "key": "ctrl+k m",
@@ -580,7 +580,7 @@
     {
         "key": "escape",
         "command": "notebook.cell.quitEdit",
-        "when": "inputFocus && notebookEditorFocused && !inlineChatFocused"
+        "when": "inputFocus && notebookEditorFocused && !editorHasMultipleSelections && !inlineChatFocused"
     },
     {
         "key": "escape",
@@ -665,16 +665,6 @@
         "command": "editor.action.toggleOvertypeInsertMode"
     },
     {
-        "key": "ctrl+shift+l",
-        "command": "editor.action.selectHighlights",
-        "when": "findInputFocussed"
-    },
-    {
-        "key": "ctrl+shift+l",
-        "command": "-editor.action.selectHighlights",
-        "when": "editorFocus"
-    },
-    {
         "key": "alt+left",
         "command": "workbench.action.focusPreviousGroup"
     },
@@ -752,5 +742,18 @@
         "key": "ctrl+shift+i",
         "command": "inlineChat.start",
         "when": "inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || inlineChatHasNotebookAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook' || inlineChatHasNotebookInline && inlineChatPossible && !editorReadonly && !editorSimpleInput && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "meta+enter",
+        "command": "-notebook.cell.quitEdit",
+        "when": "inputFocus && notebookEditorFocused && !inlineChatFocused && notebookCellType == 'markup'"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-viewReadme.docs"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "notebook.cellOutput.copy"
     }
 ]

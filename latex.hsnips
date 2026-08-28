@@ -347,8 +347,12 @@ snippet cbox "red color box" A
 \colorbox{red}{$1}$0
 endsnippet
 
-snippet cref "clever references" A
-\cref{$1}$0
+snippet ` cref` "clever references" A
+~\cref{$1}$0
+endsnippet
+
+snippet ` cite` "citation" A
+~\cite{$1}$0
 endsnippet
 
 snippet use "usepackage" 
@@ -556,7 +560,7 @@ snippet eps "epsilon" iAm
 endsnippet
 
 priority 100
-snippet ell "ell" iAm
+snippet ell "ell" Am
 ℓ
 endsnippet
 
@@ -888,6 +892,12 @@ snippet inn "in" Am
 ∈
 endsnippet
 
+priority 300
+snippet ninn "not in" Am
+∉
+endsnippet
+
+
 snippet `\\ln ot` "in" iAm
 \lnot
 endsnippet
@@ -1028,20 +1038,37 @@ endsnippet
 snippet lk "inline Math" wA
 $${1}$$0
 endsnippet
+
 snippet dm "Display Math" wA
 \[
 ${0}
 \]
 endsnippet
+
+priority 100
 snippet eqt "equation" wA
 \begin{equation}
   ${0}
 \end{equation}
 endsnippet
+
+priority 200
+snippet leqt "equation" wA
+\begin{equation}\label{${1:label}}
+  ${0}
+\end{equation}
+endsnippet
+
 snippet eqs "equation*" wA
 \begin{equation*}
   ${0}
 \end{equation*}
+endsnippet
+
+snippet bframe "Beamer Frame" wA
+\begin{frame}{${0}}
+  
+\end{frame}
 endsnippet
 
 # ==== Common Environment ====
@@ -1051,8 +1078,9 @@ snippet case "cases" iAm
   ${4:equation}, &\text{ ${5:if} }${6:case}
 \end{cases}
 endsnippet
+
 snippet ali "aligned" iAm
-\begin{aligned}
+\begin{aligned}\label{${1:label}}
 $0 \\\\
 \end{aligned}
 endsnippet
@@ -1305,15 +1333,22 @@ snippet `(?<!\\)dparz` "∂^2/∂z^2" iAm
 endsnippet
 
 priority 300
-snippet `(?<!\\)diff` "∂/∂x" iAm
+snippet `(?<!\\)diff` "d/dx" iAm
 \frac{\mathrm{d}${1:y}}{\mathrm{d}${2:x}}$0
 endsnippet
+
+priority 300
+snippet `(?<!\\)dift` "d/dt" iAm
+\frac{\mathrm{d}${1:y}}{\mathrm{d}${2:t}}$0
+endsnippet
+
+
 
 
 
 priority 300
 snippet dd "dd" wAm
-\ \mathrm{d}
+\mathrm{d}
 endsnippet
 
 snippet buu "bigcup" iAm
@@ -1621,7 +1656,7 @@ endsnippet
 snippet bfig "figure" wA
 \\begin{figure}[${1:h!}]
 \\centering
-\\includegraphics[width = 0.45\\textwidth]{$2}
+\\includegraphics{$2}
 \\caption{${3:Caption}}
 \\label{fig: $4}
 \\end{figure}$5

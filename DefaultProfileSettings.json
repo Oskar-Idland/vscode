@@ -3,10 +3,9 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "workbench.editorAssociations": {
-        "*.ipynb": "default",
+        "*.ipynb": "jupyter-notebook",
         "*.py": "default"
     },
-    
     "java.refactor.renameFromFileExplorer": "autoApply",
     "python.pythonPath": "C:\\Users\\oskar\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
     "files.exclude": {
@@ -30,7 +29,7 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "prettier.tabWidth": 4,
     "terminal.integrated.tabs.enabled": true,
-    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontSize": 20,
     "latex-workshop.view.pdf.viewer": "tab",
     "javascript.suggest.enabled": false,
     "typescript.suggest.enabled": false,
@@ -256,6 +255,7 @@
         "Shrödingerligningen",
         "sinusbølgen",
         "skalaen",
+        "slurm",
         "Spaghettification",
         "spektralfordelingen",
         "spenningskarakteristikk",
@@ -291,9 +291,7 @@
         "ylabel",
         "yscale"
     ],
-
-
-     "git-autoconfig.configList": [
+    "git-autoconfig.configList": [
         {
             "user.email": "oskari@portalspace.no",
             "user.name": "oskaridland"
@@ -316,8 +314,8 @@
     "latex-workshop.intellisense.update.delay": 0.25,
     "[markdown]": {
         "editor.quickSuggestions": {
-            "comments": "on",
-            "strings": "on",
+            "comments": "off",
+            "strings": "off",
             "other": "on"
         }
     },
@@ -329,8 +327,6 @@
     "gitlens.defaultDateFormat": "hh:mm  dddd MM YYYY",
     "gitlens.defaultDateShortFormat": null,
     "latex-workshop.latex.tools": [
-
-
         {
             "name": "latexmk",
             "command": "latexmk",
@@ -460,7 +456,7 @@
     "code-runner.saveFileBeforeRun": true,
     "code-runner.saveAllFilesBeforeRun": true,
     "code-runner.showExecutionMessage": true,
-    "code-runner.executorMap": { 
+    "code-runner.executorMap": {
         "fish": "/usr/bin/fish",
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
@@ -514,11 +510,9 @@
         "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "sml": "cd $dir && sml $fileName"
     },
-    
-    
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-    "editor.fontFamily": "Fira Code, JuliaMono",
+    "editor.fontFamily": "Hack Nerd Font Mono,JuliaMono",
     "editor.fontLigatures": true,
     "latex-utilities.countWord.format": "${words} Words",
     "jupyter.pylanceHandlesNotebooks": false,
@@ -535,13 +529,7 @@
     },
     "readable.enableAutoComplete": false,
     "julia.usePlotPane": false,
-    "github.copilot.advanced": {
-
-    
-    
-    },
-    
-    
+    "github.copilot.advanced": {},
     "workbench.colorTheme": "Monokai",
     "hsnips.hsnipsPath": "C:\\Users\\oskar\\AppData\\Roaming\\Code\\User\\hsnips",
     "hsnips.windows": "C:\\Users\\oskar\\AppData\\Roaming\\Code\\User\\hsnips",
@@ -579,8 +567,8 @@
     "cSpell.enableFiletypes": [
         "!julia",
         "latex-expl3",
-        "tex", 
-        "Latex", 
+        "tex",
+        "Latex",
         "LaTeX"
     ],
     "github.copilot.enable": {
@@ -669,57 +657,64 @@
             // ]
         },
         {
-            
             "language": "latex",
             "substitutions": [
                 // Parentheses 
                 {
-                    "ugly": "\\\\left\\(", 
+                    "ugly": "\\\\left\\(",
                     "pretty": "(",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\right\\)",
                     "pretty": ")",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "\\\\left\\[", 
+                    "ugly": "\\\\left\\[",
                     "pretty": "[",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\right\\]",
                     "pretty": "]",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "\\\\left\\\\{", 
+                    "ugly": "\\\\left\\\\{",
                     "pretty": "{",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\right\\\\}",
                     "pretty": "}",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "\\\\left\\|", 
+                    "ugly": "\\\\left\\|",
                     "pretty": "|",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\right\\|",
                     "pretty": "|",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\left\\.",
@@ -729,273 +724,317 @@
                     "ugly": "\\\\right\\\\rvert",
                     "pretty": "|",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "\\\\left\\<", 
+                    "ugly": "\\\\left\\<",
                     "pretty": "<",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\right\\>",
                     "pretty": ">",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\sqrt",
                     "pretty": "√",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
-            
-            // Super and Subscripts 0-9
+                // Super and Subscripts 0-9
                 {
                     "ugly": "\\^1",
                     "pretty": "¹",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{1\\}",
                     "pretty": "¹",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^2",
                     "pretty": "²",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{2\\}",
                     "pretty": "²",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^3",
                     "pretty": "³",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{3\\}",
                     "pretty": "³",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^4",
                     "pretty": "⁴",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{4\\}",
                     "pretty": "⁴",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^5",
                     "pretty": "⁵",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{5\\}",
                     "pretty": "⁵",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^6",
                     "pretty": "⁶",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{6\\}",
                     "pretty": "⁶",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^7",
                     "pretty": "⁷",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{7\\}",
                     "pretty": "⁷",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^8",
                     "pretty": "⁸",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{8\\}",
                     "pretty": "⁸",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^9",
                     "pretty": "⁹",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\^\\{9\\}",
                     "pretty": "⁹",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\_0",
                     "pretty": "₀",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\_\\{0\\}",
                     "pretty": "₀",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_1", 
+                    "ugly": "_1",
                     "pretty": "₁",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{1\\}", 
+                    "ugly": "_\\{1\\}",
                     "pretty": "₁",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{2\\}",
                     "pretty": "₂",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_2",
                     "pretty": "₂",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{3\\}",
                     "pretty": "₃",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_3",
                     "pretty": "₃",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_4", 
+                    "ugly": "_4",
                     "pretty": "₄",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{4\\}", 
+                    "ugly": "_\\{4\\}",
                     "pretty": "₄",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_5", 
+                    "ugly": "_5",
                     "pretty": "₅",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{5\\}", 
+                    "ugly": "_\\{5\\}",
                     "pretty": "₅",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_5", 
+                    "ugly": "_5",
                     "pretty": "₅",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{5\\}", 
+                    "ugly": "_\\{5\\}",
                     "pretty": "₅",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_6", 
+                    "ugly": "_6",
                     "pretty": "₆",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{6\\}", 
+                    "ugly": "_\\{6\\}",
                     "pretty": "₆",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_7", 
+                    "ugly": "_7",
                     "pretty": "₇",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{7\\}", 
+                    "ugly": "_\\{7\\}",
                     "pretty": "₇",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_8", 
+                    "ugly": "_8",
                     "pretty": "₈",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_\\{8\\}", 
+                    "ugly": "_\\{8\\}",
                     "pretty": "₈",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
-                    "ugly": "_9", 
+                    "ugly": "_9",
                     "pretty": "₉",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{10\\}",
                     "pretty": "₁₀",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{\\perp}\\}",
                     "pretty": "⊥",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 // {
                 //     "ugly": "_{-∞}",
@@ -1005,8 +1044,7 @@
                 //     "ugly": "^{∞}",
                 //     "pretty": "∞"
                 // },
-                
-            // Subscripts letters 
+                // Subscripts letters 
                 // {
                 //     "ugly": "_a",
                 //     "pretty": "ₐ",
@@ -1049,48 +1087,54 @@
                 //     "style": {
                 //         "color": "#2DCDDF"}
                 // },
-                
                 {
                     "ugly": "\\\\mathrm{d}",
                     "pretty": "d",
                     "style": {
-                        "color": "#ff0074"}
+                        "color": "#ff0074"
+                    }
                 },
-                {   
+                {
                     "ugly": "_i",
                     "pretty": "ᵢ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{i\\}",
                     "pretty": "ᵢ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_j",
                     "pretty": "ⱼ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{j\\}",
                     "pretty": "ⱼ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_k",
                     "pretty": "ₖ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{k\\}",
                     "pretty": "ₖ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 // {
                 //     "ugly": "_l",
@@ -1108,25 +1152,29 @@
                     "ugly": "_m",
                     "pretty": "ₘ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{m\\}",
                     "pretty": "ₘ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_n",
                     "pretty": "ₙ",
                     "style": {
-                        "color": "#2DCDDF"}  
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "_\\{n\\}",
                     "pretty": "ₙ",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 // {
                 //     "ugly": "_o",
@@ -1140,7 +1188,6 @@
                 //     "style": {
                 //         "color": "#2DCDDF"}
                 // },
-                
                 // {
                 //     "ugly": "_x",
                 //     "pretty": "ₓ",
@@ -1159,18 +1206,12 @@
                 //     "style": {
                 //         "color": "#2DCDDF"}
                 // },
-                    
-                    
-                    
-                
-                
-                
-                
                 {
                     "ugly": "\\^∘",
                     "pretty": "°",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\$",
@@ -1263,7 +1304,8 @@
                     "ugly": "\\\\ ",
                     "pretty": "␣",
                     "style": {
-                        "color": "#2DCDDF"}
+                        "color": "#2DCDDF"
+                    }
                 },
                 {
                     "ugly": "\\\\forall",
@@ -1910,13 +1952,13 @@
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.copyRelativePathSeparator": "/",
     "git-autoconfig.ignoreRootList": [
-        "C:/Users/Oskar/GitHub/CompFys/CompFys-Project2"
+        "C:/Users/Oskar/GitHub/CompFys/CompFys-Project2",
+        "/home/oskar/repos/MasterThesis"
     ],
-    "editor.fontWeight": 500,
+    "editor.fontWeight": 300,
     "workbench.editor.empty.hint": "hidden",
     "vsicons.dontShowNewVersionMessage": true,
     "code-runner.runInTerminal": true,
-    "terminal.external.windowsExec": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "workbench.editor.wrapTabs": true,
     "settingsSync.keybindingsPerPlatform": false,
     "workbench.settings.applyToAllProfiles": [
@@ -1926,16 +1968,43 @@
         "editor.cursorSmoothCaretAnimation",
         "workbench.editor.wrapTabs",
         "python.defaultInterpreterPath",
-        "latex-utilities.formattedPaste.image.template"
+        "latex-utilities.formattedPaste.image.template",
+        "git.addAICoAuthor",
+        "chat.agent.enabled"
     ],
     "editor.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
-    "python.defaultInterpreterPath": "/home/oskar/anaconda3/envs/myenv/bin/python",
+    "python.defaultInterpreterPath": "/home/oskar/miniconda3/envs/myenv/bin/python",
     "terminal.integrated.inheritEnv": false,
     "latex-utilities.formattedPaste.image.template": "\\begin{figure}[h!]\n\\centering\n\\includegraphics[width = $1\\textwidth]{${imageFilePath}}\n\\caption{${2:Caption}}\n\\label{fig: ${3:${imageFileNameWithoutExt}}}\n\\end{figure}\n$0",
     "shellcheck.ignorePatterns": {
         "**/*.fish": false
     },
     "files.autoSave": "afterDelay",
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "cSpell.enabledFileTypes": {
+        "python": false,
+        "cpp": false,
+        "*": false
+    },
+    "terminal.external.linuxExec": "kitty",
+    "notebook.lineNumbers": "on",
+    "ty.inlayHints.callArgumentNames": false,
+    "ty.completions.autoImport": false,
+    "ty.inlayHints.variableTypes": false,
+    "chat.viewSessions.orientation": "stacked",
+    "C_Cpp.loggingLevel": "None",
+    "C_Cpp.files.exclude": {
+        "/": true,
+        "**/.vscode": true,
+        "**/.git": true
+    },
+    "C_Cpp.exclusionPolicy": "checkFilesAndFolders",
+    "search.followSymlinks": false,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true,
+    },
+    "git.addAICoAuthor": "off",
+    "chat.agent.enabled": false,
 }

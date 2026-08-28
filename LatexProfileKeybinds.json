@@ -328,11 +328,67 @@
         "when": "!operationInProgress"
     },
     {
-        "key": "ctrl+insert",
+        "key": "ctrl+alt+insert",
         "command": "editor.action.toggleOvertypeInsertMode"
     },
     {
         "key": "insert",
         "command": "-editor.action.toggleOvertypeInsertMode"
+    },
+    {
+        "key": "tab",
+        "command": "-tabout",
+        "when": "editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !inlineEditIsVisible && !inlineSuggestionVisible && !suggestWidgetVisible"
+    },
+    {
+        "key": "escape",
+        "command": "umath.preview.closeAllPreview",
+        "when": "editorTextFocus && umathShowPreview && latex-workshop.texmathenv"
+    },
+    {
+        "key": "escape",
+        "command": "-umath.preview.closeAllPreview",
+        "when": "umathShowPreview"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "latex-conceal.toggle"
+    },
+    {
+        "key": "ctrl+shift+[Semicolon]",
+        "command": "latex-workshop.compilerlog",
+        "when": "!virtualWorkspace"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+alt+right",
+        "command": "workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+pagedown",
+        "command": "-workbench.action.nextEditorInGroup"
+    },
+    {
+        "key": "ctrl+alt+left",
+        "command": "workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+k ctrl+pageup",
+        "command": "-workbench.action.previousEditorInGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+right",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "ctrl+shift+alt+left",
+        "command": "workbench.action.focusPreviousGroup"
     }
 ]
